@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ระบบภูมิทัศน์หลักสูตร มฟล. — MFU Curriculum Landscape</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,44 @@
   .reveal .controls{ color:var(--accent); }
   svg{ display:block; }
   svg text{ font-family:"Sarabun","Noto Sans Thai",sans-serif; }
-  @media (max-width:800px){ .reveal{ font-size:24px; } }
+
+  /* ---- chrome: slide number bottom-left, controls bottom-right ---- */
+  html, body{ overflow-x:hidden; }
+  .reveal .slide-number{
+    left:14px; right:auto; bottom:12px; top:auto;
+    background:rgba(255,255,255,.9); color:var(--ink-3);
+    font-size:14px; padding:4px 10px; border-radius:6px;
+    border:1px solid var(--rule); }
+  .reveal .controls{ right:16px; bottom:16px; }
+  .reveal .progress{ height:5px; }
+
+  /* ---- figures and the comparison table scroll inside themselves ---- */
+  .figwrap, .cmpwrap{ overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
+  .scrollhint{ display:none; font-size:.5em; color:var(--ink-3); margin-top:.35em; }
+
+  /* ---- phone portrait: one column, bigger type, bigger controls ---- */
+  @media (max-width:768px){
+    .reveal{ font-size:27px; }
+    .reveal h1{ font-size:1.55em; }
+    .reveal h2{ font-size:1.12em; }
+    .cols.c3, .cols.c2{ grid-template-columns:1fr; gap:.55em; }
+    .cols.c5{ grid-template-columns:1fr 1fr; gap:.5em; }
+    .gates{ grid-template-columns:1fr 1fr; font-size:.62em; }
+    .statrow{ flex-wrap:wrap; gap:.8em 1.3em; }
+    .lede, .card p{ max-width:none; }
+    .card p{ font-size:.62em; }
+    .figwrap svg{ min-width:840px; max-height:none !important; }
+    .cmpwrap table.cmp{ min-width:660px; font-size:.66em; }
+    .scrollhint{ display:block; }
+  }
+
+  /* ---- any small screen (incl. phone landscape): tap-friendly controls ---- */
+  @media (max-width:768px), (max-height:520px){
+    .reveal .controls{ transform:scale(1.55); transform-origin:bottom right;
+                       right:20px; bottom:22px; }
+    .reveal .slide-number{ font-size:15px; padding:6px 12px; bottom:14px; left:14px; }
+    .reveal .progress{ height:7px; }
+  }
 </style>
 </head>
 <body>
@@ -142,7 +179,7 @@
 <section>
   <h3>เส้นทางของข้อมูล</h3>
   <h2 style="font-size:1.02em">จากแหล่งข้อมูล ถึงเอกสารเสนอสภา</h2>
-  <svg viewBox="0 0 1240 400" width="100%" style="max-height:60vh" preserveAspectRatio="xMidYMid meet" role="img"
+  <div class="figwrap"><svg viewBox="0 0 1240 400" width="100%" style="max-height:60vh" preserveAspectRatio="xMidYMid meet" role="img"
        aria-label="แผนภาพการไหลของข้อมูลจากเจ็ดแหล่ง ผ่านการตรวจสอบด้านกฎหมาย ขั้นตอนปัญญาประดิษฐ์ และคลังคะแนน ไปสู่แดชบอร์ด หน้าสรุปภาพรวม และเอกสารเสนอสภา">
     <defs>
       <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -209,7 +246,7 @@
     <path class="ln" d="M1006 180 C1014 180 1014 136 1022 136"/>
     <path class="ln" d="M1006 193 L1022 193"/>
     <path class="ln" d="M1006 206 C1014 206 1014 250 1022 250"/>
-  </svg>
+  </svg><p class="scrollhint">← เลื่อนดูแผนภาพทั้งหมด →</p></div>
   <aside class="notes">
     Cadence detail. Fetched on run and cached with a visible fetchedAt (plan D17, mfu-spec.md §3 note):
     admissions/intake plan, OpenAlex (TTL 30 days), NESDC and DOPA (TTL 365 days), rankings. Collected
@@ -295,7 +332,7 @@
   <h2 style="font-size:1.02em">สามหลักสูตรนำร่อง — สำนักวิชาเทคโนโลยีดิจิทัลประยุกต์</h2>
   <div style="margin-top:1.2em; max-width:900px">
     <div>
-      <svg viewBox="0 0 640 240" width="100%" style="max-height:56vh" preserveAspectRatio="xMidYMid meet" role="img"
+      <div class="figwrap"><svg viewBox="0 0 640 240" width="100%" style="max-height:56vh" preserveAspectRatio="xMidYMid meet" role="img"
            aria-label="คะแนนสุขภาพรวม: วิศวกรรมคอมพิวเตอร์ 71.7 วิศวกรรมซอฟต์แวร์ 69.6 เทคโนโลยีมัลติมีเดียและแอนิเมชัน 60.3 จากเต็ม 100">
         <style>
           .ax{stroke:#ddd7cd;stroke-width:1}
@@ -330,7 +367,7 @@
         <text class="vl" x="468" y="161">60.3</text>
 
         <text class="bd" x="0" y="234">คะแนนสุขภาพรวม ณ ๘ กันยายน ๒๕๖๙</text>
-      </svg>
+      </svg><p class="scrollhint">← เลื่อนดูแผนภาพทั้งหมด →</p></div>
     </div>
   </div>
   <aside class="notes">
@@ -365,7 +402,7 @@
   <h2 style="font-size:1.04em">พัฒนาต่อยอดอย่างมีนัยสำคัญจากระบบของมหาวิทยาลัยขอนแก่น มิใช่การคัดลอก</h2>
   <p class="small" style="margin:-.2em 0 .8em">มฟล. ได้รับอนุญาตให้ถือครอง ใช้งาน และต่อยอด ·
   ตารางนี้คือสิ่งที่ มฟล. สร้างขึ้นใหม่ ผ่านรอบพัฒนาราว <strong>๖๗ รอบ</strong></p>
-  <table class="cmp">
+  <div class="cmpwrap"><table class="cmp">
     <tr><th>ประเด็น</th><th>ระบบของ มข.</th><th>ระบบของ มฟล.</th></tr>
     <tr><td>การเชื่อมระบบ</td><td>เชื่อมสำนักทะเบียน ฝ่ายบุคคล และฝ่ายการเงิน</td>
         <td class="mfu"><b>ระบบอิสระ</b> ไม่เชื่อมระบบภายในใดเลย</td></tr>
@@ -379,7 +416,7 @@
         <td class="mfu"><b>สำนักวิชา</b> และเกณฑ์จำนวนรับของ มฟล. เอง</td></tr>
     <tr><td>สถาปัตยกรรม</td><td>ติดตั้งบนเครือข่ายมหาวิทยาลัย</td>
         <td class="mfu"><b>serverless ใช้ Firestore อย่างเดียว</b></td></tr>
-  </table>
+  </table><p class="scrollhint">← เลื่อนดูตารางทั้งหมด →</p></div>
   <aside class="notes">
     Four further differences not on the slide, to raise if asked.
     (7) Student and staff data: KKU drew enrolment from the Registrar's Oracle system and the roster from
@@ -414,7 +451,7 @@
 <section>
   <h3>เส้นทางการพัฒนา</h3>
   <h2 style="font-size:1.02em">มาถึงจุดนี้ได้อย่างไร — ห้าขั้นตอน โดยข้อกำหนดคั่นกลาง</h2>
-  <svg viewBox="0 0 1240 340" width="100%" style="max-height:60vh" preserveAspectRatio="xMidYMid meet" role="img"
+  <div class="figwrap"><svg viewBox="0 0 1240 340" width="100%" style="max-height:60vh" preserveAspectRatio="xMidYMid meet" role="img"
        aria-label="แผนภาพห้าขั้นตอนการพัฒนา ตั้งแต่การศึกษาโครงสร้างระบบของ มข. การเขียนข้อกำหนด การปรับข้อกำหนด การพัฒนาใหม่ ไปจนถึงการกำกับดูแล โดยมีเส้นประถูกกากบาทแสดงว่าไม่มีการคัดลอกซอร์สโค้ดโดยตรง">
     <defs>
       <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -478,7 +515,7 @@
     </g>
     <text x="620" y="300" text-anchor="middle" style="font-size:16px;fill:#96302b;font-weight:700">ไม่มีการคัดลอกซอร์สโค้ดของ มข. มาใช้โดยตรง</text>
     <text x="620" y="324" text-anchor="middle" style="font-size:13.5px;fill:#727d88">ทางเดียวจากขั้นที่ ๑ ไปขั้นที่ ๔ คือผ่านข้อกำหนดในขั้นที่ ๒ และ ๓</text>
-  </svg>
+  </svg><p class="scrollhint">← เลื่อนดูแผนภาพทั้งหมด →</p></div>
   <aside class="notes">
     Stage by stage, with the evidence.
     (1) Reverse-engineering — root CLAUDE.md, "What this repository is": the runnable KKU tree was
@@ -627,18 +664,43 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
 <script>
+  var phone = window.matchMedia('(max-width: 768px)').matches;
+
   Reveal.initialize({
     hash: true,
     slideNumber: 'c/t',
     controls: true,
+    controlsLayout: 'bottom-right',
+    controlsTutorial: false,
     progress: true,
     touch: true,
     center: false,
-    margin: 0.06,
-    width: 1280,
-    height: 720,
+    width:  phone ? 480 : 1280,
+    height: phone ? 900 : 720,
+    margin: phone ? 0.04 : 0.06,
+    minScale: 0.2,
+    maxScale: 1.6,
     transition: 'fade',
     plugins: [ RevealNotes ]
+  }).then(function () {
+    // tap the right / left third of a small screen to move between slides
+    if (!window.matchMedia('(max-width: 768px), (max-height: 520px)').matches) return;
+    document.querySelector('.reveal').addEventListener('click', function (e) {
+      if (e.target.closest('a, button, .controls, .slide-number, .figwrap, .cmpwrap')) return;
+      var w = window.innerWidth;
+      if (e.clientX > w * 2 / 3) Reveal.next();
+      else if (e.clientX < w / 3) Reveal.prev();
+    });
+  });
+
+  // re-init geometry when the phone is rotated across the breakpoint
+  window.addEventListener('resize', function () {
+    var now = window.matchMedia('(max-width: 768px)').matches;
+    if (now === phone) return;
+    phone = now;
+    Reveal.configure({ width: phone ? 480 : 1280, height: phone ? 900 : 720,
+                       margin: phone ? 0.04 : 0.06 });
+    Reveal.layout();
   });
 </script>
 </body>
