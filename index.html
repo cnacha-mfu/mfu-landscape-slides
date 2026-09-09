@@ -91,17 +91,30 @@
 
   /* ---- phone portrait: one column, bigger type, bigger controls ---- */
   @media (max-width:768px){
-    .reveal{ font-size:27px; }
-    .reveal h1{ font-size:1.55em; }
-    .reveal h2{ font-size:1.12em; }
-    .cols.c3, .cols.c2{ grid-template-columns:1fr; gap:.55em; }
-    .cols.c5{ grid-template-columns:1fr 1fr; gap:.5em; }
-    .gates{ grid-template-columns:1fr 1fr; font-size:.62em; }
-    .statrow{ flex-wrap:wrap; gap:.8em 1.3em; }
+    .reveal{ font-size:25px; }
+    .reveal h1{ font-size:1.5em; }
+    .reveal h2{ font-size:1.08em; margin-bottom:.3em; }
+    .reveal h3{ margin-bottom:.35em; }
+    .reveal p, .reveal li{ line-height:1.5; }
+    .reveal li{ margin-bottom:.32em; }
+    .cols{ gap:.5em; }
+    .cols.c3, .cols.c2{ grid-template-columns:1fr; }
+    .cols.c5{ grid-template-columns:1fr 1fr; }
+    .gates{ grid-template-columns:1fr 1fr; gap:.4em; font-size:.58em; }
+    .gate{ padding:.45em .5em; line-height:1.4; }
+    .cannot{ padding:.5em .6em; font-size:.56em; line-height:1.5; }
+    .statrow{ flex-wrap:wrap; gap:.7em 1.2em; }
+    .stat b{ font-size:1.2em; }
+    .stat span{ font-size:.46em; }
     .lede, .card p{ max-width:none; }
-    .card p{ font-size:.62em; }
+    .card{ padding:.5em .6em; }
+    .card h4{ font-size:.64em; margin-bottom:.2em; line-height:1.3; }
+    .card p{ font-size:.56em; line-height:1.45; }
+    .med{ font-size:.64em; line-height:1.5; }
+    .small{ font-size:.54em; line-height:1.5; }
     .figwrap svg{ min-width:840px; max-height:none !important; }
-    .cmpwrap table.cmp{ min-width:660px; font-size:.66em; }
+    .cmpwrap table.cmp{ min-width:660px; font-size:.6em; }
+    .cmpwrap table.cmp td{ padding:.42em .45em; line-height:1.45; }
     .scrollhint{ display:block; }
   }
 
