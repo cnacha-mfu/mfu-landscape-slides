@@ -1,48 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MFU Curriculum Landscape — Overview</title>
+<title>ระบบภูมิทัศน์หลักสูตร มฟล. — MFU Curriculum Landscape</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap">
 <style>
   :root{
     --ink:#1c2024; --ink-2:#4a545e; --ink-3:#727d88;
     --surface:#fbfaf8; --surface-2:#f2efe9; --rule:#ddd7cd;
-    --accent:#8a1c30;        /* MFU-appropriate deep red */
-    --accent-soft:#c8788a;
+    --accent:#8a1c30;
     --gold:#a67c1f;
     --ok:#2f6b4f; --warn:#a8641a; --stop:#96302b;
-    --bar:#8a1c30;
   }
-  .reveal{ font-family:"Source Sans 3","Noto Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif;
-           font-size:30px; color:var(--ink); }
+  .reveal{ font-family:"Sarabun","Noto Sans Thai",system-ui,"Segoe UI",Tahoma,sans-serif;
+           font-size:29px; color:var(--ink); }
   .reveal .slides{ text-align:left; }
   .reveal section{ height:100%; }
   .reveal h1,.reveal h2,.reveal h3,.reveal h4{
-    font-family:"Source Sans 3","Noto Sans Thai",system-ui,sans-serif;
-    color:var(--ink); text-transform:none; letter-spacing:-0.01em; font-weight:700; margin:0 0 .35em;}
-  .reveal h1{ font-size:1.95em; line-height:1.08; }
-  .reveal h2{ font-size:1.32em; line-height:1.15; }
-  .reveal h3{ font-size:.92em; color:var(--accent); font-weight:600; letter-spacing:.04em; text-transform:uppercase;}
-  .reveal p,.reveal li{ line-height:1.42; }
+    font-family:"Sarabun","Noto Sans Thai",system-ui,sans-serif;
+    color:var(--ink); text-transform:none; letter-spacing:0; font-weight:700; margin:0 0 .35em;
+    line-height:1.28; }
+  .reveal h1{ font-size:1.85em; line-height:1.2; }
+  .reveal h2{ font-size:1.24em; }
+  .reveal h3{ font-size:.9em; color:var(--accent); font-weight:600; letter-spacing:.02em; }
+  .reveal p,.reveal li{ line-height:1.62; }
   .reveal ul{ margin-left:1.05em; }
-  .reveal li{ margin-bottom:.35em; }
+  .reveal li{ margin-bottom:.4em; }
   .reveal strong{ color:var(--ink); font-weight:600; }
   .reveal em{ font-style:normal; color:var(--accent); font-weight:600; }
   .reveal a{ color:var(--accent); }
   .reveal .slide-background{ background:var(--surface); }
-  .th{ font-family:"Noto Sans Thai",sans-serif; }
+  .en{ font-family:"Sarabun",system-ui,sans-serif; }
 
-  .kicker{ font-size:.6em; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0 0 .8em; font-weight:600;}
-  .lede{ font-size:.82em; color:var(--ink-2); max-width:22em; }
+  .kicker{ font-size:.6em; letter-spacing:.05em; color:var(--ink-3); margin:0 0 .8em; font-weight:600;}
+  .lede{ font-size:.8em; color:var(--ink-2); max-width:24em; line-height:1.7; }
   .rule{ height:4px; width:120px; background:var(--accent); margin:.7em 0 1em; border-radius:2px;}
-  .small{ font-size:.62em; color:var(--ink-3); line-height:1.4; }
-  .med{ font-size:.72em; }
-  .note-tbc{ color:var(--warn); font-weight:600; }
+  .small{ font-size:.6em; color:var(--ink-3); line-height:1.6; }
+  .med{ font-size:.7em; line-height:1.65; }
 
   .cols{ display:grid; gap:1.1em; }
   .c2{ grid-template-columns:1fr 1fr; }
@@ -50,106 +48,108 @@
   .c5{ grid-template-columns:repeat(5,1fr); }
 
   .card{ background:#fff; border:1px solid var(--rule); border-radius:10px; padding:.7em .8em; }
-  .card h4{ font-size:.72em; margin:0 0 .3em; }
-  .card p{ font-size:.58em; color:var(--ink-2); margin:0; line-height:1.35; }
+  .card h4{ font-size:.7em; margin:0 0 .3em; line-height:1.35; }
+  .card p{ font-size:.55em; color:var(--ink-2); margin:0; line-height:1.6; }
 
-  table.cmp{ width:100%; border-collapse:collapse; font-size:.52em; }
-  table.cmp th{ text-align:left; padding:.45em .5em; border-bottom:2px solid var(--rule);
-                font-size:1em; color:var(--ink-3); text-transform:uppercase; letter-spacing:.06em;}
-  table.cmp td{ padding:.42em .5em; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-2); }
+  table.cmp{ width:100%; border-collapse:collapse; font-size:.5em; }
+  table.cmp th{ text-align:left; padding:.5em .5em; border-bottom:2px solid var(--rule);
+                font-size:1em; color:var(--ink-3); letter-spacing:.02em;}
+  table.cmp td{ padding:.45em .5em; border-bottom:1px solid var(--rule); vertical-align:top;
+                color:var(--ink-2); line-height:1.55; }
   table.cmp td.mfu{ color:var(--ink); }
   table.cmp td.mfu b{ color:var(--accent); }
-  table.cmp tr td:first-child{ font-weight:600; color:var(--ink); width:20%; }
+  table.cmp tr td:first-child{ font-weight:600; color:var(--ink); width:19%; }
 
-  .gates{ display:grid; grid-template-columns:repeat(4,1fr); gap:.5em; font-size:.52em; }
+  .gates{ display:grid; grid-template-columns:repeat(4,1fr); gap:.5em; font-size:.5em; }
   .gate{ background:#fff; border:1px solid var(--rule); border-left:3px solid var(--ok);
-         border-radius:6px; padding:.5em .6em; }
+         border-radius:6px; padding:.55em .6em; line-height:1.55; }
   .gate b{ display:block; color:var(--ink); }
   .cannot{ background:#fff; border:1px solid var(--rule); border-left:3px solid var(--stop);
-           border-radius:6px; padding:.55em .7em; font-size:.56em; color:var(--ink-2); }
+           border-radius:6px; padding:.6em .7em; font-size:.54em; color:var(--ink-2); line-height:1.6; }
 
-  .statrow{ display:flex; gap:1.6em; margin:.5em 0 .2em; }
-  .stat b{ display:block; font-size:1.5em; color:var(--accent); line-height:1; font-weight:700; }
-  .stat span{ font-size:.55em; color:var(--ink-3); }
+  .statrow{ display:flex; gap:1.5em; margin:.5em 0 .2em; }
+  .stat b{ display:block; font-size:1.45em; color:var(--accent); line-height:1.1; font-weight:700; }
+  .stat span{ font-size:.52em; color:var(--ink-3); line-height:1.5; display:block; }
 
-  .pill{ display:inline-block; font-size:.85em; padding:.08em .5em; border-radius:99px;
+  .pill{ display:inline-block; font-size:.85em; padding:.05em .55em; border-radius:99px;
          background:var(--surface-2); color:var(--ink-2); border:1px solid var(--rule); }
-  .pill.live{ background:#e8f1eb; color:var(--ok); border-color:#bcd8c8; }
   .pill.tbc{ background:#fbf0e2; color:var(--warn); border-color:#e5cda6; }
 
-  .reveal .footer{ position:absolute; bottom:-.2em; left:0; font-size:.44em; color:var(--ink-3); }
   .reveal .progress{ color:var(--accent); }
   .reveal .controls{ color:var(--accent); }
-  svg text{ font-family:"Source Sans 3","Noto Sans Thai",sans-serif; }
-  @media (max-width:800px){ .reveal{ font-size:24px; } }
+  svg text{ font-family:"Sarabun","Noto Sans Thai",sans-serif; }
+  @media (max-width:800px){ .reveal{ font-size:23px; } }
 </style>
 </head>
 <body>
 <div class="reveal"><div class="slides">
 
-<!-- 1 ────────────────────────────────────────────── -->
+<!-- 1 ───────────────── ปก ───────────────── -->
 <section data-auto-animate>
-  <p class="kicker">Mae Fah Luang University <span class="th">· มหาวิทยาลัยแม่ฟ้าหลวง</span></p>
-  <h1>MFU Curriculum<br>Landscape</h1>
+  <p class="kicker">มหาวิทยาลัยแม่ฟ้าหลวง · Mae Fah Luang University</p>
+  <h1>ระบบภูมิทัศน์หลักสูตร มฟล.<br><span style="font-size:.62em;font-weight:600;color:var(--ink-2)">MFU Curriculum Landscape</span></h1>
   <div class="rule"></div>
-  <p class="lede"><strong>Evidence for curriculum decisions.</strong> Every MFU programme scored
-  from its own <span class="th">มคอ.2</span> and from public data — with the source, the date and
-  the method attached to every number.</p>
-  <p class="small" style="margin-top:1.4em">Staging: <strong>mfu-program-landscape.web.app</strong> ·
-  Prepared for the MFU executive briefing · 9 September 2026</p>
+  <p class="lede"><strong>หลักฐานสำหรับการตัดสินใจเรื่องหลักสูตร</strong> — ประเมินทุกหลักสูตรของมหาวิทยาลัย
+  จากเอกสาร มคอ.2 ของหลักสูตรเอง ประกอบกับข้อมูลสาธารณะ โดยแนบแหล่งที่มา วันที่ดึงข้อมูล
+  และวิธีคำนวณไว้กับทุกตัวเลข</p>
+  <p class="small" style="margin-top:1.4em">ระบบทดสอบ (staging): <strong class="en">mfu-program-landscape.web.app</strong>
+  · เสนอต่อผู้บริหารมหาวิทยาลัย · ๙ กันยายน ๒๕๖๙</p>
   <aside class="notes">
-    Framing sentence: this is MFU's own system, built for Council-grade evidence. It is a substantial
-    further development of Khon Kaen University's Program Landscape, which MFU is authorised to hold and
-    derive from — slide 6 sets out exactly what is new.
-    Sources for this slide: mfu-spec.md §1 (purpose and posture); TODO.md (staging URL
-    https://mfu-program-landscape.web.app).
+    Framing: this is MFU's own system, built for Council-grade evidence. It is a substantial further
+    development of Khon Kaen University's Program Landscape, which MFU is authorised to hold, run and
+    derive from — slides 6 and 7 set out exactly what is new and how it was built.
+    Sources: mfu-spec.md §1 (purpose and posture); TODO.md (staging URL https://mfu-program-landscape.web.app).
   </aside>
 </section>
 
-<!-- 2 ────────────────────────────────────────────── -->
+<!-- 2 ───────────────── ระบบนี้คืออะไร ───────────────── -->
 <section>
-  <h3>What it is</h3>
-  <h2>A standalone system that turns MFU's own documents into a Council-ready brief</h2>
+  <h3>ระบบนี้คืออะไร</h3>
+  <h2>ระบบอิสระที่เปลี่ยนเอกสารหลักสูตรของมหาวิทยาลัยเอง ให้เป็นรายงานพร้อมเสนอสภามหาวิทยาลัย</h2>
   <div class="cols c3" style="margin-top:.9em">
     <div class="card">
-      <h4>1 · It reads what MFU already publishes</h4>
-      <p>The approved <span class="th">มคอ.2</span> of each programme — courses, credits, learning
-      outcomes, teaching methods, QA framework, the lecturer table — extracted by AI with a verbatim
-      quotation behind every claim.</p>
+      <h4>๑ · อ่านสิ่งที่มหาวิทยาลัยเผยแพร่อยู่แล้ว</h4>
+      <p>มคอ.2 ที่ผ่านการอนุมัติของแต่ละหลักสูตร — รายวิชา หน่วยกิต ผลลัพธ์การเรียนรู้ วิธีสอนและวิธีวัดผล
+      ระบบประกันคุณภาพ และตารางอาจารย์ผู้รับผิดชอบหลักสูตร สกัดด้วยปัญญาประดิษฐ์
+      พร้อมข้อความอ้างอิงตามตัวอักษรกำกับทุกข้อสรุป</p>
     </div>
     <div class="card">
-      <h4>2 · It joins public evidence</h4>
-      <p>Admissions and intake plans, government and aggregator job postings, OpenAlex publications,
-      NESDC/DOPA demographics for the North. No commercial licence, no partner credential.</p>
+      <h4>๒ · เชื่อมกับหลักฐานสาธารณะ</h4>
+      <p>ข้อมูลการรับเข้าและแผนรับนักศึกษา ประกาศรับสมัครงานจากภาครัฐและเว็บรวบรวมงาน
+      ผลงานตีพิมพ์จาก <span class="en">OpenAlex</span> และประชากรศาสตร์ภาคเหนือจาก
+      <span class="en">NESDC/</span>กรมการปกครอง โดยไม่ต้องซื้อสิทธิ์เชิงพาณิชย์
+      และไม่ต้องใช้บัญชีของหน่วยงานพันธมิตร</p>
     </div>
     <div class="card">
-      <h4>3 · It scores and explains</h4>
-      <p>Five dimensions, a lifecycle verdict and a risk likelihood per programme — a dashboard a Dean
-      reads in five minutes, an executive cockpit, and a Council pack PDF for governing-body papers.</p>
+      <h4>๓ · ให้คะแนนและอธิบายเหตุผล</h4>
+      <p>ห้ามิติ คำวินิจฉัยวงจรชีวิตหลักสูตร และโอกาสเกิดความเสี่ยงรายหลักสูตร — แสดงเป็นแดชบอร์ด
+      ที่คณบดีอ่านจบใน ๕ นาที ห้องควบคุมสำหรับผู้บริหาร และเอกสารประกอบวาระสภามหาวิทยาลัยรูปแบบ
+      <span class="en">PDF</span></p>
     </div>
   </div>
-  <p class="med" style="margin-top:1.1em"><em>It integrates with no internal MFU system.</em>
-  That is a deliberate scope choice: the system could be built and validated before any data-sharing
-  agreement with the Registrar, HR or Finance — and it carries no personal data from MFU's internal
-  systems at all.</p>
-  <p class="small" style="margin-top:.5em">Register loaded on staging: <strong>15 <span class="th">สำนักวิชา</span> / Schools,
-  84 programmes</strong>. Scope model is School <span class="th">(สำนักวิชา)</span> → Department → Programme.</p>
+  <p class="med" style="margin-top:1.1em"><em>ระบบนี้ไม่เชื่อมต่อกับระบบสารสนเทศภายในของมหาวิทยาลัยเลย</em>
+  ซึ่งเป็นการกำหนดขอบเขตโดยเจตนา ทำให้พัฒนาและตรวจสอบความถูกต้องได้ก่อนมีข้อตกลงแบ่งปันข้อมูลกับ
+  สำนักทะเบียน ฝ่ายบุคคล หรือฝ่ายการเงิน และทำให้ระบบไม่มีข้อมูลส่วนบุคคลจากระบบภายในของมหาวิทยาลัยอยู่เลย</p>
+  <p class="small" style="margin-top:.5em">ข้อมูลที่นำเข้าแล้วในระบบทดสอบ: <strong>๑๕ สำนักวิชา ๘๔ หลักสูตร</strong>
+  โครงสร้างขอบเขตคือ สำนักวิชา → สาขาวิชา → หลักสูตร</p>
   <aside class="notes">
     Citations. "Integrates with no internal MFU system", the public/document-derived split, and the
     "built before any data-sharing agreement" argument: mfu-spec.md §1. The three AI assessments
     (digest, peer review, pedagogy): mfu-spec.md §8. Dashboard as the primary output surface and the
-    five-minute readability principle: mfu-spec.md §8.1. Council pack: app/CLAUDE.md (Session 35). Do not quote a page count aloud - app/CLAUDE.md says 6 pages while docs/spec-reconciliation.md records the rendered brief at 18 pages (school pack 8); the page count is to be confirmed. 15 schools / 84 programmes imported from the intake-plan CSV:
-    app/CLAUDE.md, Session 38 note (3 certificate rows skipped). School/สำนักวิชา vocabulary: CLAUDE.md
-    "MFU-specific decisions already made".
+    five-minute readability principle: mfu-spec.md §8.1. Council pack: app/CLAUDE.md (Session 35) —
+    do not quote a page count aloud: app/CLAUDE.md says 6 pages while docs/spec-reconciliation.md
+    records the rendered brief at 18 pages (school pack 8), so the page count is to be confirmed.
+    15 schools / 84 programmes imported from the intake-plan CSV: app/CLAUDE.md, Session 38
+    (3 certificate rows skipped). School/สำนักวิชา vocabulary: root CLAUDE.md, "MFU-specific decisions".
   </aside>
 </section>
 
-<!-- 3 ────────────────────────────────────────────── -->
+<!-- 3 ───────────────── เส้นทางของข้อมูล ───────────────── -->
 <section>
-  <h3>How the evidence flows</h3>
-  <h2 style="font-size:1.05em">From source to Council pack — with a legal gate in the middle</h2>
+  <h3>เส้นทางของข้อมูล</h3>
+  <h2 style="font-size:1.02em">จากแหล่งข้อมูลถึงเอกสารเสนอสภา — โดยมีด่านตรวจทางกฎหมายคั่นกลาง</h2>
   <svg viewBox="0 0 1240 500" width="100%" style="max-height:66vh" role="img"
-       aria-label="Data flow from seven sources through a legal gate and AI stages to the scoring store and output surfaces">
+       aria-label="แผนภาพการไหลของข้อมูลจากเจ็ดแหล่ง ผ่านด่านตรวจทางกฎหมาย ขั้นตอนปัญญาประดิษฐ์ และคลังคะแนน ไปสู่แดชบอร์ด ห้องควบคุม และเอกสารเสนอสภา">
     <defs>
       <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
         <path d="M0 0 L10 5 L0 10 z" fill="#a9a196"/>
@@ -157,413 +157,528 @@
       <style>
         .bx{fill:#ffffff;stroke:#ddd7cd;stroke-width:1.5;rx:8}
         .lbl{font-size:15px;fill:#1c2024;font-weight:600}
-        .sub{font-size:12px;fill:#727d88}
-        .hdr{font-size:12px;fill:#727d88;font-weight:700;letter-spacing:.09em}
+        .sub{font-size:12.5px;fill:#727d88}
+        .hdr{font-size:12px;fill:#727d88;font-weight:700;letter-spacing:.04em}
         .ln{stroke:#a9a196;stroke-width:1.6;fill:none;marker-end:url(#ar)}
       </style>
     </defs>
 
-    <text x="10" y="20" class="hdr">SOURCES</text>
-    <text x="300" y="20" class="hdr">LEGAL GATE</text>
-    <text x="530" y="20" class="hdr">AI STAGES</text>
-    <text x="800" y="20" class="hdr">SCORING STORE</text>
-    <text x="1040" y="20" class="hdr">OUTPUT</text>
+    <text x="10" y="20" class="hdr">แหล่งข้อมูล</text>
+    <text x="292" y="20" class="hdr">ด่านตรวจทางกฎหมาย</text>
+    <text x="516" y="20" class="hdr">ขั้นตอนปัญญาประดิษฐ์</text>
+    <text x="780" y="20" class="hdr">คลังคะแนน</text>
+    <text x="1028" y="20" class="hdr">ผลลัพธ์</text>
 
-    <!-- sources -->
-    <g>
-      <rect class="bx" x="10" y="36" width="250" height="46"/>
-      <text x="24" y="58" class="lbl">มคอ.2 PDFs</text><text x="24" y="74" class="sub">MFU's own approved documents · on upload</text>
-      <rect class="bx" x="10" y="90" width="250" height="46"/>
-      <text x="24" y="112" class="lbl">Registrar admissions + intake plan</text><text x="24" y="128" class="sub">published tables · fetch on run</text>
-      <rect class="bx" x="10" y="144" width="250" height="46" style="stroke:#8a1c30"/>
-      <text x="24" y="166" class="lbl">DOE Smart Job Center</text><text x="24" y="182" class="sub">ไทยมีงานทำ · collected nightly</text>
-      <rect class="bx" x="10" y="198" width="250" height="46" style="stroke:#8a1c30"/>
-      <text x="24" y="220" class="lbl">Jooble Thailand</text><text x="24" y="236" class="sub">th.jooble.org API · collected nightly</text>
-      <rect class="bx" x="10" y="252" width="250" height="46"/>
-      <text x="24" y="274" class="lbl">OpenAlex</text><text x="24" y="290" class="sub">publications · fetch on run, 30-day cache</text>
-      <rect class="bx" x="10" y="306" width="250" height="46"/>
-      <text x="24" y="328" class="lbl">MFU lecturer roster</text><text x="24" y="344" class="sub">own site · retired from scoring (D28)</text>
-      <rect class="bx" x="10" y="360" width="250" height="46"/>
-      <text x="24" y="382" class="lbl">NESDC / DOPA demographics</text><text x="24" y="398" class="sub">North region 18–22 · fetch on run</text>
-    </g>
-    <text x="10" y="432" class="sub">━ red border = collected nightly (postings vanish); others fetched when an analysis runs, cached with a fetch date</text>
+    <rect class="bx" x="10" y="36" width="250" height="46"/>
+    <text x="24" y="58" class="lbl">เอกสาร มคอ.2</text><text x="24" y="76" class="sub">เอกสารของมหาวิทยาลัยเอง · เมื่ออัปโหลด</text>
+    <rect class="bx" x="10" y="90" width="250" height="46"/>
+    <text x="24" y="112" class="lbl">การรับเข้า + แผนรับนักศึกษา</text><text x="24" y="130" class="sub">ตารางที่เผยแพร่ · ดึงเมื่อวิเคราะห์</text>
+    <rect class="bx" x="10" y="144" width="250" height="46" style="stroke:#8a1c30;stroke-width:2"/>
+    <text x="24" y="166" class="lbl">ไทยมีงานทำ (กรมการจัดหางาน)</text><text x="24" y="184" class="sub">DOE Smart Job Center · เก็บทุกคืน</text>
+    <rect class="bx" x="10" y="198" width="250" height="46" style="stroke:#8a1c30;stroke-width:2"/>
+    <text x="24" y="220" class="lbl">Jooble ประเทศไทย</text><text x="24" y="238" class="sub">th.jooble.org API · เก็บทุกคืน</text>
+    <rect class="bx" x="10" y="252" width="250" height="46"/>
+    <text x="24" y="274" class="lbl">OpenAlex</text><text x="24" y="292" class="sub">ผลงานตีพิมพ์ · ดึงเมื่อวิเคราะห์ (แคช ๓๐ วัน)</text>
+    <rect class="bx" x="10" y="306" width="250" height="46"/>
+    <text x="24" y="328" class="lbl">ทำเนียบอาจารย์บนเว็บ มฟล.</text><text x="24" y="346" class="sub">ยกเลิกการใช้ให้คะแนนแล้ว (D28)</text>
+    <rect class="bx" x="10" y="360" width="250" height="46"/>
+    <text x="24" y="382" class="lbl">ประชากรศาสตร์ NESDC / กรมการปกครอง</text><text x="24" y="400" class="sub">ภาคเหนือ อายุ ๑๘–๒๒ · ดึงเมื่อวิเคราะห์</text>
+    <text x="10" y="436" class="sub">กรอบสีแดง = เก็บสะสมทุกคืน (ประกาศงานหายไปตามเวลา) · แหล่งอื่นดึงเมื่อรันการวิเคราะห์ และเก็บแคชพร้อมวันที่ดึงข้อมูล</text>
 
-    <!-- gate -->
-    <rect class="bx" x="292" y="150" width="190" height="150" style="fill:#fbf5f6;stroke:#8a1c30;stroke-width:2"/>
-    <text x="306" y="176" class="lbl">ToS + robots.txt</text>
-    <text x="306" y="196" class="lbl">review per site</text>
-    <text x="306" y="218" class="sub">26 sources surveyed;</text>
-    <text x="306" y="234" class="sub">a failing source is dropped,</text>
-    <text x="306" y="250" class="sub">not worked around</text>
-    <text x="306" y="274" class="sub">PII stripped at the boundary</text>
-    <text x="306" y="290" class="sub">Reconciliation sign-off</text>
+    <rect class="bx" x="292" y="148" width="192" height="154" style="fill:#fbf5f6;stroke:#8a1c30;stroke-width:2"/>
+    <text x="306" y="174" class="lbl">ตรวจเงื่อนไขการใช้บริการ</text>
+    <text x="306" y="194" class="lbl">และ robots.txt รายเว็บไซต์</text>
+    <text x="306" y="216" class="sub">สำรวจแล้ว ๒๖ แหล่ง</text>
+    <text x="306" y="234" class="sub">แหล่งที่ไม่ผ่านคือ “ตัดทิ้ง”</text>
+    <text x="306" y="252" class="sub">ไม่ใช่หาทางเลี่ยง</text>
+    <text x="306" y="276" class="sub">ตัดข้อมูลส่วนบุคคลตั้งแต่ต้นทาง</text>
+    <text x="306" y="294" class="sub">และต้องมีการลงนามสอบทาน</text>
 
     <path class="ln" d="M262 60 C280 60 280 190 290 200"/>
     <path class="ln" d="M262 114 C280 114 280 195 290 205"/>
-    <path class="ln" d="M262 168 C280 168 280 200 290 210"/>
-    <path class="ln" d="M262 222 C280 222 280 220 290 222"/>
+    <path class="ln" d="M262 168 C280 168 280 200 290 212"/>
+    <path class="ln" d="M262 222 C280 222 280 220 290 224"/>
     <path class="ln" d="M262 276 C280 276 280 250 290 240"/>
-    <path class="ln" d="M262 330 C280 330 280 270 290 252"/>
-    <path class="ln" d="M262 384 C280 384 280 290 290 262"/>
+    <path class="ln" d="M262 330 C280 330 280 272 290 254"/>
+    <path class="ln" d="M262 384 C280 384 280 292 290 266"/>
 
-    <!-- AI stages -->
-    <rect class="bx" x="516" y="120" width="230" height="210" style="fill:#faf8f3"/>
-    <text x="530" y="146" class="lbl">Versioned AI stages</text>
-    <text x="530" y="168" class="sub">digest · courses · skills · pedagogy</text>
-    <text x="530" y="184" class="sub">peer review · internationalisation</text>
-    <text x="530" y="200" class="sub">occupation map · skill extraction</text>
-    <text x="530" y="228" class="sub">Two providers behind one service:</text>
-    <text x="530" y="244" class="sub">Gemini and NVIDIA NIM, per stage,</text>
-    <text x="530" y="260" class="sub">with a spend breaker</text>
-    <text x="530" y="286" class="sub">Every call writes an inference row</text>
-    <text x="530" y="302" class="sub">(cost, sources, confidence ≥ 0.85)</text>
-    <path class="ln" d="M484 225 L512 225"/>
+    <rect class="bx" x="516" y="118" width="234" height="214" style="fill:#faf8f3"/>
+    <text x="530" y="144" class="lbl">ขั้นตอน AI ที่กำกับเวอร์ชัน</text>
+    <text x="530" y="168" class="sub">สรุปหลักสูตร · รายวิชา · ทักษะ</text>
+    <text x="530" y="186" class="sub">การสอน · ทบทวนเทียบสากล</text>
+    <text x="530" y="204" class="sub">ความเป็นนานาชาติ · จับคู่อาชีพ</text>
+    <text x="530" y="230" class="sub">ผู้ให้บริการสองรายหลังบริการเดียว:</text>
+    <text x="530" y="248" class="sub">Gemini และ NVIDIA NIM เลือกตามขั้น</text>
+    <text x="530" y="266" class="sub">พร้อมเบรกเกอร์จำกัดค่าใช้จ่าย</text>
+    <text x="530" y="292" class="sub">ทุกการเรียกใช้บันทึกแถวตรวจสอบ</text>
+    <text x="530" y="310" class="sub">(ต้นทุน แหล่งอ้างอิง ความเชื่อมั่น ≥ 0.85)</text>
+    <path class="ln" d="M486 225 L512 225"/>
 
-    <!-- scoring store -->
-    <rect class="bx" x="780" y="120" width="215" height="210" style="fill:#faf8f3"/>
-    <text x="794" y="146" class="lbl">Firestore</text>
-    <text x="794" y="168" class="sub">analysis collections +</text>
-    <text x="794" y="184" class="sub">scoring-store collections</text>
-    <text x="794" y="210" class="sub">nightly rollups only:</text>
-    <text x="794" y="226" class="sub">occupation × province × month</text>
-    <text x="794" y="242" class="sub">skill × province × month, n ≥ 5</text>
-    <text x="794" y="268" class="sub">pure scoring functions,</text>
-    <text x="794" y="284" class="sub">every formula version-stamped</text>
-    <path class="ln" d="M748 225 L776 225"/>
+    <rect class="bx" x="780" y="118" width="215" height="214" style="fill:#faf8f3"/>
+    <text x="794" y="144" class="lbl">Firestore</text>
+    <text x="794" y="168" class="sub">คอลเล็กชันผลวิเคราะห์ และ</text>
+    <text x="794" y="186" class="sub">คอลเล็กชันคลังคะแนน</text>
+    <text x="794" y="212" class="sub">ให้คะแนนจากยอดรวมรายคืนเท่านั้น:</text>
+    <text x="794" y="230" class="sub">อาชีพ × จังหวัด × เดือน</text>
+    <text x="794" y="248" class="sub">ทักษะ × จังหวัด × เดือน, n ≥ 5</text>
+    <text x="794" y="274" class="sub">ฟังก์ชันคำนวณเป็นฟังก์ชันบริสุทธิ์</text>
+    <text x="794" y="292" class="sub">และประทับเวอร์ชันสูตรทุกครั้ง</text>
+    <path class="ln" d="M752 225 L776 225"/>
 
-    <!-- outputs -->
-    <rect class="bx" x="1028" y="120" width="200" height="58"/>
-    <text x="1042" y="146" class="lbl">Programme dashboard</text><text x="1042" y="164" class="sub">one per programme</text>
-    <rect class="bx" x="1028" y="186" width="200" height="58"/>
-    <text x="1042" y="212" class="lbl">Executive cockpit</text><text x="1042" y="230" class="sub">School / University rollups</text>
-    <rect class="bx" x="1028" y="252" width="200" height="58"/>
-    <text x="1042" y="278" class="lbl">Council pack PDF</text><text x="1042" y="296" class="sub">methodology stamped throughout</text>
+    <rect class="bx" x="1028" y="120" width="202" height="58"/>
+    <text x="1042" y="146" class="lbl">แดชบอร์ดรายหลักสูตร</text><text x="1042" y="166" class="sub">หนึ่งหน้าต่อหนึ่งหลักสูตร</text>
+    <rect class="bx" x="1028" y="186" width="202" height="58"/>
+    <text x="1042" y="212" class="lbl">ห้องควบคุมผู้บริหาร</text><text x="1042" y="232" class="sub">สรุปรวมระดับสำนักวิชา/มหาวิทยาลัย</text>
+    <rect class="bx" x="1028" y="252" width="202" height="58"/>
+    <text x="1042" y="278" class="lbl">เอกสารเสนอสภา (PDF)</text><text x="1042" y="298" class="sub">ประทับเวอร์ชันระเบียบวิธีทุกหน้า</text>
     <path class="ln" d="M997 200 C1012 200 1012 150 1024 150"/>
     <path class="ln" d="M997 218 L1024 216"/>
     <path class="ln" d="M997 236 C1012 236 1012 280 1024 280"/>
   </svg>
   <aside class="notes">
-    Citations. Source list and cadence: mfu-spec.md §3 table (S1–S10) and the fetch-model note
-    (plan D17 — annual/monthly/quarterly sources fetched on demand and cached with fetchedAt; only
-    job boards run nightly). Per-source status lines: docs/data-sources/doe-smart-job.md
-    (ALLOW-WITH-CONDITIONS 2026-09-06, real adapter Session 18b), jooble.md (ALLOW-WITH-CONDITIONS
-    2026-09-09, reconciliation PASS 2026-09-09, Session 67), openalex.md (on demand, TTL 30 days),
-    nesdc-projections.md (on demand, TTL 365 days), tcas.md (DENY for automated collection → file
-    import), mfu-roster.md (retired from scoring 2026-09-07, D28).
-    Legal gate: mfu-spec.md §4.3 — per-site ToS and robots review recorded before a connector is
-    written, PII stripped at the connector boundary, aggregate-only scoring, n ≥ 5.
-    26 sources surveyed: docs/data-sources/job-sources-survey.md §1 summary table (rows 1–26).
-    Two rollup tables only: mfu-spec.md §4.5. Firestore with analysis and scoring-store collections,
-    no Cloud SQL: CLAUDE.md (plan D18). Two AI providers and the credit breaker: app/CLAUDE.md
-    (staging routes job-posting-skills, skill-normaliser and skill-family to the NIM pilot; credit
-    breaker Session 59). Confidence threshold 0.85 and the inference row: mfu-spec.md §8.
+    Citations. Source list and cadence: mfu-spec.md §3 table (S1–S10) and its fetch-model note
+    (plan D17 — annual/monthly/quarterly sources fetched on demand and cached with fetchedAt; only job
+    boards run nightly). Per-source status lines: docs/data-sources/doe-smart-job.md
+    (ALLOW-WITH-CONDITIONS 2026-09-06, real adapter Session 18b, reconciliation PASS 2026-09-08),
+    jooble.md (ALLOW-WITH-CONDITIONS + reconciliation PASS 2026-09-09, Session 67), openalex.md
+    (on demand, TTL 30 days), nesdc-projections.md (on demand, TTL 365 days), tcas.md (DENY for
+    automated collection → file import), mfu-roster.md (retired from scoring 2026-09-07, plan D28).
+    Legal gate: mfu-spec.md §4.3. 26 sources surveyed: docs/data-sources/job-sources-survey.md §1.
+    Two rollup tables only, n ≥ 5: §4.5 and §9. Firestore with analysis and scoring-store collections,
+    no Cloud SQL: root CLAUDE.md (plan D18). Two AI providers routed per stage plus the credit breaker:
+    app/CLAUDE.md (NIM pilot D20, Gemini Flash-Lite default D26; breaker Session 59). Confidence
+    threshold 0.85 and the inference row: mfu-spec.md §8.
   </aside>
 </section>
 
-<!-- 4 ────────────────────────────────────────────── -->
+<!-- 4 ───────────────── ห้ามิติ ───────────────── -->
 <section>
-  <h3>The model</h3>
-  <h2>Five dimensions, a verdict, and rules that stop the system flattering itself</h2>
+  <h3>แบบจำลองการประเมิน</h3>
+  <h2>ห้ามิติ หนึ่งคำวินิจฉัย และกฎที่ป้องกันไม่ให้ระบบเข้าข้างตัวเอง</h2>
   <div class="cols c5" style="margin-top:.7em">
-    <div class="card"><h4>Attractiveness</h4><p>Are students choosing this programme? Competition
-      ratio, fill rate, applicant trend, intake-floor compliance.</p></div>
-    <div class="card"><h4>Relevance</h4><p>Does what we teach match what employers advertise for?
-      Plus the demographic ceiling of the North.</p></div>
-    <div class="card"><h4>Capability</h4><p>Can we deliver it? Publications per lecturer, senior-rank
-      share, research concentration — from the <span class="th">มคอ.2</span> lecturer table.</p></div>
-    <div class="card"><h4>Curriculum Quality</h4><p>Is the curriculum sound? Teaching fit, industry
-      engagement, QA framework maturity, revision age.</p></div>
-    <div class="card" style="border-color:var(--accent)"><h4 style="color:var(--accent)">Internationalisation</h4>
-      <p><strong>MFU's own addition.</strong> Medium of instruction, named partnerships, international
-      intake, co-authorship, foreign-degree faculty.</p></div>
+    <div class="card"><h4>ความน่าดึงดูด<br><span class="small en" style="font-size:.75em">Attractiveness</span></h4>
+      <p>นักเรียนเลือกหลักสูตรนี้หรือไม่ — อัตราการแข่งขัน อัตราการรับเต็มแผน แนวโน้มผู้สมัคร
+      และการเป็นไปตามเกณฑ์จำนวนรับขั้นต่ำ</p></div>
+    <div class="card"><h4>ความสอดคล้องกับตลาดแรงงาน<br><span class="small en" style="font-size:.75em">Relevance</span></h4>
+      <p>สิ่งที่สอนตรงกับสิ่งที่นายจ้างประกาศรับหรือไม่ ประกอบกับเพดานประชากรวัยเรียนของภาคเหนือ</p></div>
+    <div class="card"><h4>ศักยภาพการจัดการเรียนการสอน<br><span class="small en" style="font-size:.75em">Capability</span></h4>
+      <p>เราสอนได้จริงหรือไม่ — ผลงานตีพิมพ์ต่ออาจารย์ สัดส่วนตำแหน่งวิชาการอาวุโส
+      และการกระจายตัวของงานวิจัย จากตารางอาจารย์ใน มคอ.2</p></div>
+    <div class="card"><h4>คุณภาพของหลักสูตร<br><span class="small en" style="font-size:.75em">Curriculum Quality</span></h4>
+      <p>ตัวหลักสูตรเองดีหรือไม่ — ความเหมาะสมของวิธีสอน ความร่วมมือกับภาคอุตสาหกรรม
+      ระดับระบบประกันคุณภาพ และอายุการปรับปรุงหลักสูตร</p></div>
+    <div class="card" style="border-color:var(--accent)"><h4 style="color:var(--accent)">ความเป็นนานาชาติของหลักสูตร<br><span class="small en" style="font-size:.75em">Internationalisation</span></h4>
+      <p><strong>มิติที่ มฟล. เพิ่มขึ้นเอง</strong> — ภาษาที่ใช้สอน ความร่วมมือที่ระบุชื่อสถาบัน
+      สัดส่วนนักศึกษาต่างชาติ การตีพิมพ์ร่วมกับต่างประเทศ และวุฒิการศึกษาต่างประเทศของอาจารย์</p></div>
   </div>
   <div class="cols c2" style="margin-top:1em">
     <div>
-      <h3 style="margin-bottom:.4em">On top of the score</h3>
-      <p class="med"><strong>Lifecycle verdict</strong> — Sunset · Stable · Rising · Frontier, from
-      seven signed signals with AI-readiness weighted heaviest, and downgrade-only gates that can
-      never promote a programme.</p>
-      <p class="med"><strong>Risk likelihood</strong> — recruitment decay, AI disruption, demographic
-      pressure. Likelihood is published; the 5×5 impact matrix is deliberately withheld until real
-      finance data exists.</p>
+      <h3 style="margin-bottom:.4em">สิ่งที่วางอยู่บนคะแนน</h3>
+      <p class="med"><strong>คำวินิจฉัยวงจรชีวิตหลักสูตร</strong> — ถดถอย (Sunset) · คงตัว (Stable) ·
+      เติบโต (Rising) · แนวหน้า (Frontier) คำนวณจากสัญญาณ ๗ ตัวที่มีทั้งบวกและลบ
+      โดยให้น้ำหนักความพร้อมด้าน AI มากที่สุด และมีด่านที่ “ปรับลดได้อย่างเดียว” ไม่มีวันเลื่อนขั้นให้</p>
+      <p class="med"><strong>โอกาสเกิดความเสี่ยง</strong> — ความเสี่ยงด้านการรับนักศึกษา
+      ด้านการถูก AI แทนที่ และด้านประชากรศาสตร์ ทั้งนี้ระบบเผยแพร่เฉพาะ “โอกาสเกิด”
+      ส่วนตารางความเสี่ยง ๕×๕ ถูกระงับไว้โดยเจตนา จนกว่าจะมีข้อมูลการเงินจริง</p>
     </div>
     <div>
-      <h3 style="margin-bottom:.4em">Four rules, non-negotiable</h3>
-      <ul class="med" style="font-size:.68em">
-        <li><em>Missing is not zero.</em> A driver with no data is excluded from the average and shown
-          as “—”, never substituted with 0 or 50. Every score carries a completeness percentage.</li>
-        <li><em>Every formula is versioned.</em> A past score keeps the methodology stamp it was
-          computed under, so old numbers stay interpretable.</li>
-        <li><em>n ≥ 5.</em> No job-market cell smaller than five postings ever reaches a score.</li>
-        <li><em>Provenance on every chart</em> — sources, fetch date, method, version, caveats.</li>
+      <h3 style="margin-bottom:.4em">กฎสี่ข้อที่ต่อรองไม่ได้</h3>
+      <ul class="med" style="font-size:.66em">
+        <li><em>ไม่มีข้อมูล ไม่เท่ากับศูนย์</em> — ตัวชี้วัดที่ไม่มีข้อมูลจะถูกตัดออกจากค่าเฉลี่ย
+          และแสดงเป็น “—” ไม่ใช่แทนด้วย 0 หรือ 50 ทุกคะแนนมีร้อยละความครบถ้วนกำกับ</li>
+        <li><em>ทุกสูตรมีเวอร์ชัน</em> — คะแนนในอดีตคงตราประทับระเบียบวิธีเดิมไว้ ตัวเลขเก่าจึงยังตีความได้</li>
+        <li><em>n ≥ 5</em> — ไม่มีเซลล์ข้อมูลตลาดแรงงานที่เล็กกว่าห้าประกาศงานเข้าสู่การให้คะแนน</li>
+        <li><em>ทุกแผนภูมิมีที่มา</em> — แหล่งข้อมูล วันที่ดึง วิธีคำนวณ เวอร์ชัน และข้อจำกัด</li>
       </ul>
     </div>
   </div>
   <aside class="notes">
-    Citations. Five equal-weighted dimensions, mfu-health.v6, bands &lt;40 danger / 40–65 needs
-    attention / ≥65 healthy, and "no threshold triggers automatic action": mfu-spec.md §5.
-    Per-dimension drivers: §5.1 Attractiveness, §5.2 Relevance (incl. demographic_resilience with the
-    international-intake adjustment), §5.3 Capability (three drivers; retirement_horizon_5y and
-    student_faculty_ratio dropped — they need HR data; D28 moves the denominator to the มคอ.2),
-    §5.4 Curriculum Quality, §5.5 Internationalisation (added 2026-09-07, plan D27; publishes only when
-    at least three of five drivers are populated; anchors ratified for the pilot by the project lead
-    2026-09-08 under D35, Academic Council ratification pending).
+    Citations. Five equal-weighted dimensions under mfu-health.v6; bands &lt;40 danger / 40–65 needs
+    attention / ≥65 healthy; "no threshold triggers automatic action": mfu-spec.md §5.
+    Drivers: §5.1 Attractiveness; §5.2 Relevance (demographic_resilience carries the international-intake
+    adjustment); §5.3 Capability (three drivers — retirement_horizon_5y and student_faculty_ratio dropped
+    because they need HR data; plan D28 moves the denominator to the มคอ.2); §5.4 Curriculum Quality;
+    §5.5 Internationalisation (added 2026-09-07, plan D27; publishes only when at least three of five
+    drivers are populated; anchors ratified for the pilot by the project lead 2026-09-08 under D35,
+    Academic Council ratification pending).
     Lifecycle: §6 — baseline 50, seven capped drivers, ~±110 total movement, bands &lt;45 Sunset /
     45–65 Stable / 65–80 Rising / ≥80 with content_modernity = FRONTIER; three downgrade-only gates;
-    §6.2 states openly that AI signals are made dominant and that this is a value judgement.
-    Risk: §7 — likelihood from three lenses; impact is a gross-revenue estimate, so §7 and §11
-    recommend publishing likelihood tiers only.
-    The four rules: mfu-spec.md §9 rules 1–5 and CLAUDE.md "Non-negotiable scoring rules".
+    §6.2 states openly that making AI signals dominant is a value judgement, not a statistical finding.
+    Risk: §7 — three likelihood lenses; impact is only a gross-revenue estimate, so §7 and §11 recommend
+    publishing likelihood tiers and withholding the matrix.
+    The four rules: mfu-spec.md §9 rules 1–5; root CLAUDE.md "Non-negotiable scoring rules".
   </aside>
 </section>
 
-<!-- 5 ────────────────────────────────────────────── -->
+<!-- 5 ───────────────── ตัวอย่างจริง ───────────────── -->
 <section>
-  <h3>Worked example</h3>
-  <h2 style="font-size:1.1em">Three pilot programmes — <span class="th">สำนักวิชาเทคโนโลยีดิจิทัลประยุกต์</span> / School of Applied Digital Technology</h2>
-  <div class="cols c2" style="grid-template-columns:1.15fr .85fr; margin-top:.5em">
+  <h3>ตัวอย่างจริง</h3>
+  <h2 style="font-size:1.02em">สามหลักสูตรนำร่อง — สำนักวิชาเทคโนโลยีดิจิทัลประยุกต์</h2>
+  <div class="cols c2" style="grid-template-columns:1.12fr .88fr; margin-top:.5em">
     <div>
-      <svg viewBox="0 0 620 250" width="100%" role="img"
-           aria-label="Composite health score: Computer Engineering 71.7, Software Engineering 69.6, Multimedia Technology and Animation 60.3, out of 100">
+      <svg viewBox="0 0 640 258" width="100%" role="img"
+           aria-label="คะแนนสุขภาพรวม: วิศวกรรมคอมพิวเตอร์ 71.7 วิศวกรรมซอฟต์แวร์ 69.6 เทคโนโลยีมัลติมีเดียและแอนิเมชัน 60.3 จากเต็ม 100">
         <style>
           .ax{stroke:#ddd7cd;stroke-width:1}
           .axl{font-size:12px;fill:#727d88}
-          .nm{font-size:15px;fill:#1c2024;font-weight:600}
+          .nm{font-size:14.5px;fill:#1c2024;font-weight:600}
           .vl{font-size:17px;fill:#8a1c30;font-weight:700}
-          .bd{font-size:12px;fill:#727d88}
+          .bd{font-size:11.5px;fill:#727d88}
         </style>
-        <!-- gridlines -->
-        <line class="ax" x1="250" y1="26" x2="250" y2="196"/>
-        <line class="ax" x1="330" y1="26" x2="330" y2="196" stroke-dasharray="3 3"/>
-        <line class="ax" x1="410" y1="26" x2="410" y2="196" stroke-dasharray="3 3"/>
-        <line class="ax" x1="490" y1="26" x2="490" y2="196" stroke-dasharray="3 3"/>
+        <line class="ax" x1="290" y1="26" x2="290" y2="196"/>
+        <line class="ax" x1="360" y1="26" x2="360" y2="196" stroke-dasharray="3 3"/>
+        <line class="ax" x1="430" y1="26" x2="430" y2="196" stroke-dasharray="3 3"/>
+        <line class="ax" x1="500" y1="26" x2="500" y2="196" stroke-dasharray="3 3"/>
         <line class="ax" x1="570" y1="26" x2="570" y2="196"/>
-        <text class="axl" x="250" y="214" text-anchor="middle">0</text>
-        <text class="axl" x="330" y="214" text-anchor="middle">25</text>
-        <text class="axl" x="410" y="214" text-anchor="middle">50</text>
-        <text class="axl" x="490" y="214" text-anchor="middle">75</text>
+        <text class="axl" x="290" y="214" text-anchor="middle">0</text>
+        <text class="axl" x="360" y="214" text-anchor="middle">25</text>
+        <text class="axl" x="430" y="214" text-anchor="middle">50</text>
+        <text class="axl" x="500" y="214" text-anchor="middle">75</text>
         <text class="axl" x="570" y="214" text-anchor="middle">100</text>
-        <!-- healthy band marker at 65 -->
-        <line x1="458" y1="20" x2="458" y2="200" stroke="#2f6b4f" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <text class="bd" x="462" y="18" fill="#2f6b4f">healthy ≥ 65</text>
+        <line x1="472" y1="20" x2="472" y2="200" stroke="#2f6b4f" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text class="bd" x="476" y="17" fill="#2f6b4f">เกณฑ์ “สุขภาพดี” ≥ 65</text>
 
-        <!-- bars: x = 250 + score*3.2 -->
-        <text class="nm" x="240" y="52" text-anchor="end">Computer Engineering</text>
-        <rect x="250" y="36" width="229.4" height="22" rx="4" fill="#8a1c30"/>
-        <text class="vl" x="489" y="53">71.7</text>
+        <text class="nm" x="280" y="52" text-anchor="end">วิศวกรรมคอมพิวเตอร์</text>
+        <rect x="290" y="36" width="200.8" height="22" rx="4" fill="#8a1c30"/>
+        <text class="vl" x="500" y="53">71.7</text>
 
-        <text class="nm" x="240" y="106" text-anchor="end">Software Engineering</text>
-        <rect x="250" y="90" width="222.7" height="22" rx="4" fill="#8a1c30"/>
-        <text class="vl" x="482" y="107">69.6</text>
+        <text class="nm" x="280" y="106" text-anchor="end">วิศวกรรมซอฟต์แวร์</text>
+        <rect x="290" y="90" width="194.9" height="22" rx="4" fill="#8a1c30"/>
+        <text class="vl" x="494" y="107">69.6</text>
 
-        <text class="nm" x="240" y="160" text-anchor="end">Multimedia Tech. &amp; Animation</text>
-        <rect x="250" y="144" width="193.0" height="22" rx="4" fill="#8a1c30"/>
-        <text class="vl" x="452" y="161">60.3</text>
+        <text class="nm" x="280" y="160" text-anchor="end">เทคโนโลยีมัลติมีเดียและแอนิเมชัน</text>
+        <rect x="290" y="144" width="168.8" height="22" rx="4" fill="#8a1c30"/>
+        <text class="vl" x="468" y="161">60.3</text>
 
-        <text class="bd" x="0" y="238">Composite health score, mfu-health.v6, as scored on 8 September 2026 — not yet re-scored after the salary-basis correction.</text>
+        <text class="bd" x="0" y="240">คะแนนสุขภาพรวม (mfu-health.v6) ณ วันที่ ๘ กันยายน ๒๕๖๙</text>
+        <text class="bd" x="0" y="254">ยังไม่ได้คำนวณใหม่หลังการแก้ฐานเงินเดือนในรอบพัฒนาที่ ๖๕</text>
       </svg>
     </div>
     <div>
-      <h3 style="margin-bottom:.35em">What is honest about this picture</h3>
-      <p class="small" style="font-size:.58em">Relevance publishes at <strong>3 of 6 drivers</strong>
-      (50 % complete): demographic resilience, strategic-sector alignment and salary premium.
-      Two skill drivers return <strong>NO_DEMAND_DATA</strong> and posting-volume trend returns
-      <strong>INSUFFICIENT_HISTORY</strong> — that driver needs 24 months of collection and the boards
-      have been collecting for days, not years.</p>
-      <p class="small" style="font-size:.58em">Attractiveness rests on the intake plan; per-round TCAS
-      confirmation data for MFU is <span class="pill tbc">to be confirmed</span>, so the registration-yield
-      driver stays null rather than being guessed.</p>
-      <p class="small" style="font-size:.58em">Software Engineering's Capability currently rests on a
-      roster fallback — the uploaded <span class="th">มคอ.2</span> is the wrong file and has no lecturer table.</p>
-      <p class="small" style="font-size:.58em"><strong>Computer Engineering's lifecycle verdict is
-      STABLE</strong>, trajectory 47.6 on 7 of 7 signals: strongest demographic +10 and health +8.7,
-      weakest applicant trend −14.2, content gaps −4, AI readiness −2.9.</p>
-      <p class="small" style="font-size:.58em; color:var(--accent)"><strong>None of these gaps is a
-      method failure. Each names a dataset MFU can supply.</strong></p>
+      <h3 style="margin-bottom:.35em">ความซื่อตรงของภาพนี้อยู่ตรงไหน</h3>
+      <p class="small" style="font-size:.56em">มิติความสอดคล้องกับตลาดแรงงานเผยแพร่ที่ <strong>๓ จาก ๖ ตัวชี้วัด</strong>
+      (ความครบถ้วน ๕๐%) ได้แก่ ความยืดหยุ่นทางประชากรศาสตร์ ความสอดคล้องกับอุตสาหกรรมเป้าหมาย
+      และส่วนต่างเงินเดือน ส่วนตัวชี้วัดด้านทักษะสองตัวคืนค่า <span class="en">NO_DEMAND_DATA</span>
+      และแนวโน้มปริมาณประกาศงานคืนค่า <span class="en">INSUFFICIENT_HISTORY</span> —
+      ตัวหลังต้องการประวัติการเก็บข้อมูล ๒๔ เดือน ขณะที่เราเพิ่งเก็บได้ไม่กี่วัน</p>
+      <p class="small" style="font-size:.56em">มิติความน่าดึงดูดอาศัยแผนรับนักศึกษาเป็นหลัก
+      เนื่องจากข้อมูลยืนยันสิทธิ์รายรอบของ มฟล. <span class="pill tbc">ยังไม่ยืนยัน</span>
+      ตัวชี้วัดอัตราการมารายงานตัวจึงเป็นค่าว่าง แทนที่จะเดา</p>
+      <p class="small" style="font-size:.56em">ศักยภาพของหลักสูตรวิศวกรรมซอฟต์แวร์ยังอาศัยข้อมูลสำรองจากเว็บไซต์
+      เพราะไฟล์ มคอ.2 ที่อัปโหลดไว้ไม่ใช่ฉบับที่ถูกต้องและไม่มีตารางอาจารย์</p>
+      <p class="small" style="font-size:.56em"><strong>คำวินิจฉัยของวิศวกรรมคอมพิวเตอร์คือ “คงตัว”</strong>
+      ค่าแนวโน้ม 47.6 จากสัญญาณครบ ๗ จาก ๗ — บวกสูงสุดคือประชากรศาสตร์ +10 และคะแนนสุขภาพ +8.7
+      ลบมากสุดคือแนวโน้มผู้สมัคร −14.2 ช่องว่างเนื้อหา −4 และความพร้อมด้าน AI −2.9</p>
+      <p class="small" style="font-size:.56em; color:var(--accent)"><strong>ช่องว่างเหล่านี้ไม่ใช่ความผิดพลาดของวิธีการ
+      แต่ละช่องระบุชุดข้อมูลที่มหาวิทยาลัยจัดหาให้ได้</strong></p>
     </div>
   </div>
   <aside class="notes">
-    Citations. Composite scores SE 69.6 · MTA 60.3 · CE 71.7 and Relevance sub-scores SE 91.7 ·
-    MTA 88.9 · CE 100 at 3/6 drivers, 50 % complete, with skill drivers NO_DEMAND_DATA and volume trend
-    INSUFFICIENT_HISTORY: TODO.md, "Paused 2026-09-08" section (rescore through the worker route after
-    Sessions 62–63).
+    Citations. Composites SE 69.6 · MTA 60.3 · CE 71.7, and Relevance publishing at 3/6 drivers, 50 %
+    complete, with skill drivers NO_DEMAND_DATA and volume trend INSUFFICIENT_HISTORY (Relevance
+    sub-scores SE 91.7 · MTA 88.9 · CE 100): TODO.md, "Paused 2026-09-08" section, after the Sessions
+    62–63 rescore through the worker route.
     Lifecycle: TODO.md, S64 entry — CE published STABLE, trajectory 47.6, 7 of 7 signals, no gate fired;
     rationale rows demographic +10, health +8.7, applicant trend −14.2, content gaps −4, AI readiness −2.9.
-    SE มคอ.2 is the wrong file (138 pages, no lecturer table), capabilitySource ROSTER_FALLBACK:
+    SE's มคอ.2 is the wrong file (138 pages, no lecturer table), capabilitySource ROSTER_FALLBACK:
     TODO.md "Needs the lead".
-    Caveat to say aloud: these composites were computed before Session 65's salary-basis correction
-    (salary-band.v1 / demand-rollup.v8), which required a recompute and rescore; the post-correction
-    figures are to be confirmed. Source: app/CLAUDE.md session 65 note.
+    Caveat to state aloud: these composites predate Session 65's salary-basis correction
+    (salary-band.v1 / demand-rollup.v8), which requires a recompute and rescore; the post-correction
+    figures are to be confirmed. Source: app/CLAUDE.md, Session 65 note.
     TCAS registration yield is null when confirmation counts are not published: mfu-spec.md §5.1.
   </aside>
 </section>
 
-<!-- 6 ────────────────────────────────────────────── -->
+<!-- 6 ───────────────── ต่างจาก มข. อย่างไร ───────────────── -->
 <section>
-  <h3>Provenance</h3>
-  <h2 style="font-size:1.12em">A substantial further development of KKU's Program Landscape — not a copy</h2>
-  <p class="small" style="margin:-.3em 0 .6em">MFU is authorised by Khon Kaen University to hold KKU's
-  Program Landscape, run it, and create derivative works from it. What follows is what MFU built on
-  top — roughly <strong>67 development sessions</strong> since the fork.</p>
+  <h3>ที่มาและความแตกต่าง</h3>
+  <h2 style="font-size:1.06em">เป็นการพัฒนาต่อยอดอย่างมีนัยสำคัญจากระบบของมหาวิทยาลัยขอนแก่น มิใช่การคัดลอก</h2>
+  <p class="small" style="margin:-.2em 0 .55em">มหาวิทยาลัยแม่ฟ้าหลวงได้รับอนุญาตจากมหาวิทยาลัยขอนแก่นให้ถือครอง
+  ใช้งาน และสร้างงานต่อยอดจากระบบ Program Landscape ของ มข. ตารางต่อไปนี้คือสิ่งที่ มฟล. สร้างขึ้นใหม่
+  ผ่านรอบการพัฒนาราว <strong>๖๗ รอบ</strong> นับจากจุดตั้งต้น</p>
   <table class="cmp">
-    <tr><th>Area</th><th>Inherited from KKU</th><th>What MFU built</th></tr>
-    <tr><td>Integration posture</td><td>Deep internal integration — Registrar (Oracle), HR (MSSQL), Finance</td>
-        <td class="mfu"><b>Standalone.</b> No internal system, no personal data from MFU systems; buildable before any data-sharing agreement</td></tr>
-    <tr><td>Dimensions</td><td>Five, including Financial and Outcomes</td>
-        <td class="mfu">Financial dropped, Outcomes replaced by <b>Curriculum Quality</b>, and a fifth dimension added: <b>Internationalisation</b> <span class="th">(ความเป็นนานาชาติของหลักสูตร)</span></td></tr>
-    <tr><td>Labour market</td><td>MHESI / KMITL licensed LinkedIn-derived feed, under partner credentials</td>
-        <td class="mfu"><b>A legally gated job-board subsystem built from nothing.</b> 26 sources surveyed against ToS and robots.txt; LinkedIn excluded outright; DOE <span class="th">ไทยมีงานทำ</span> and Jooble Thailand live and reconciled</td></tr>
-    <tr><td>Enrolment / faculty</td><td>Registrar series; HR roster</td>
-        <td class="mfu">Admissions and intake-plan series; capability computed from each programme's own <b><span class="th">มคอ.2</span> lecturer table</b>, with the scraped roster retired from scoring</td></tr>
-    <tr><td>Demographics</td><td>Northeast catchment</td>
-        <td class="mfu"><b>North region</b> (Chiang Rai), with an <b>international-intake adjustment</b> — MFU recruits abroad, so the Thai 18–22 ceiling binds less tightly</td></tr>
-    <tr><td>Organisation</td><td><span class="th">คณะ</span> / Faculty</td>
-        <td class="mfu"><span class="th"><b>สำนักวิชา</b></span> / School → Department → Programme, with MFU's own intake floors rather than KKU's</td></tr>
-    <tr><td>Stack</td><td>Postgres + Redis + BullMQ + containers, self-hosted on the university network</td>
-        <td class="mfu"><b>Serverless, Firestore-only</b> — Firebase App Hosting, Cloud Run, Cloud Tasks, one database holding analysis and scoring collections; no Cloud SQL</td></tr>
-    <tr><td>Data freshness</td><td>Scheduled ingestion for everything</td>
-        <td class="mfu"><b>Public sources fetched on run</b> and cached with a visible fetch date; only job boards, whose postings vanish, are collected nightly — each unlocked by a reconciliation sign-off</td></tr>
-    <tr><td>AI layer</td><td>Single provider</td>
-        <td class="mfu"><b>Two providers behind one service</b> (Gemini and NVIDIA NIM, routed per stage) with a <b>spend breaker</b>, cost and confidence recorded on every call</td></tr>
-    <tr><td>Compliance</td><td>Internal-network posture</td>
-        <td class="mfu">A full <b>PDPA package</b> with the job-board projection, DPO items tracked, and a <b>Council pack with methodology stamps</b></td></tr>
+    <tr><th>ประเด็น</th><th>ที่รับมาจาก มข.</th><th>สิ่งที่ มฟล. สร้างขึ้น</th></tr>
+    <tr><td>ท่าทีการเชื่อมต่อระบบ</td><td>เชื่อมระบบภายในอย่างลึก — สำนักทะเบียน (Oracle) ฝ่ายบุคคล (MSSQL) และฝ่ายการเงิน</td>
+        <td class="mfu"><b>ระบบอิสระ</b> ไม่เชื่อมระบบภายในใด ไม่มีข้อมูลส่วนบุคคลจากระบบของมหาวิทยาลัย
+        และพัฒนาได้ก่อนมีข้อตกลงแบ่งปันข้อมูล</td></tr>
+    <tr><td>มิติการประเมิน</td><td>ห้ามิติ รวมมิติการเงินและมิติผลลัพธ์ผู้เรียน</td>
+        <td class="mfu">ตัดมิติการเงินออก เปลี่ยนมิติผลลัพธ์เป็น <b>คุณภาพของหลักสูตร</b>
+        และเพิ่มมิติที่ห้าคือ <b>ความเป็นนานาชาติของหลักสูตร</b></td></tr>
+    <tr><td>ข้อมูลตลาดแรงงาน</td><td>ใช้ฟีดที่ได้สิทธิ์จาก อว./สจล. ซึ่งมีที่มาจาก LinkedIn ผ่านบัญชีพันธมิตร</td>
+        <td class="mfu"><b>ระบบเก็บประกาศงานที่สร้างขึ้นใหม่ทั้งหมดพร้อมด่านตรวจทางกฎหมาย</b>
+        สำรวจ ๒๖ แหล่งตามเงื่อนไขการใช้บริการและ robots.txt · ตัด LinkedIn ออกโดยชัดแจ้ง ·
+        ไทยมีงานทำ และ Jooble ประเทศไทย ใช้งานจริงและผ่านการสอบทานแล้ว</td></tr>
+    <tr><td>ข้อมูลนักศึกษาและอาจารย์</td><td>ชุดข้อมูลจากสำนักทะเบียน และทำเนียบจากฝ่ายบุคคล</td>
+        <td class="mfu">ใช้ข้อมูลการรับเข้าและแผนรับนักศึกษา และคำนวณศักยภาพจาก
+        <b>ตารางอาจารย์ใน มคอ.2 ของหลักสูตรเอง</b> โดยยกเลิกการใช้ทำเนียบจากเว็บไซต์ในการให้คะแนน</td></tr>
+    <tr><td>ประชากรศาสตร์</td><td>พื้นที่รับนักศึกษาภาคตะวันออกเฉียงเหนือ</td>
+        <td class="mfu"><b>ภาคเหนือ</b> (เชียงราย) พร้อม <b>การปรับด้วยสัดส่วนนักศึกษาต่างชาติ</b> —
+        เมื่อ มฟล. รับนักศึกษาจากต่างประเทศ เพดานประชากรไทยอายุ ๑๘–๒๒ จึงบีบน้อยกว่า</td></tr>
+    <tr><td>โครงสร้างองค์กร</td><td>คณะ / Faculty</td>
+        <td class="mfu"><b>สำนักวิชา</b> → สาขาวิชา → หลักสูตร และใช้เกณฑ์จำนวนรับขั้นต่ำของ มฟล. เอง
+        ไม่รับเกณฑ์ของ มข. มาใช้</td></tr>
+    <tr><td>สถาปัตยกรรมระบบ</td><td>Postgres + Redis + คิวงาน + คอนเทนเนอร์ ติดตั้งบนเครือข่ายมหาวิทยาลัย</td>
+        <td class="mfu"><b>สถาปัตยกรรมไร้เซิร์ฟเวอร์ ใช้ Firestore อย่างเดียว</b> —
+        Firebase App Hosting, Cloud Run, Cloud Tasks และฐานข้อมูลเดียวเก็บทั้งผลวิเคราะห์และคลังคะแนน ไม่มี Cloud SQL</td></tr>
+    <tr><td>ความสดของข้อมูล</td><td>ตั้งเวลาดึงข้อมูลทุกแหล่ง</td>
+        <td class="mfu"><b>แหล่งสาธารณะดึงเมื่อรันการวิเคราะห์</b> แล้วแคชพร้อมวันที่ดึงที่มองเห็นได้
+        เก็บสะสมรายคืนเฉพาะประกาศงานซึ่งหายไปตามเวลา และแต่ละแหล่งต้องผ่านการลงนามสอบทานก่อนใช้ให้คะแนน</td></tr>
+    <tr><td>ชั้นปัญญาประดิษฐ์</td><td>ผู้ให้บริการรายเดียว</td>
+        <td class="mfu"><b>ผู้ให้บริการสองรายหลังบริการเดียว</b> (Gemini และ NVIDIA NIM เลือกตามขั้นตอน)
+        พร้อม <b>เบรกเกอร์จำกัดค่าใช้จ่าย</b> และบันทึกต้นทุนกับความเชื่อมั่นทุกการเรียกใช้</td></tr>
+    <tr><td>การกำกับดูแล</td><td>อาศัยการอยู่ในเครือข่ายภายในเป็นหลัก</td>
+        <td class="mfu">ชุดเอกสาร <b>PDPA</b> ครบถ้วนรวมถึงขอบเขตข้อมูลประกาศงาน ติดตามรายการที่รอ
+        <b>เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล</b> และ <b>เอกสารเสนอสภาที่ประทับเวอร์ชันระเบียบวิธี</b></td></tr>
   </table>
   <aside class="notes">
-    Citations. Authorisation to hold, run and derive: repository LICENSE and README authorisation record;
-    the KKU material stays private and no KKU source is reproduced in this deck.
-    KKU baseline: mfu-spec.md §2 delta table (dimensions, MHESI/KMITL LinkedIn-derived API, Registrar
-    Oracle, kkuscholar, HR MSSQL, Northeast, คณะ/Faculty, KKU's 30/8 intake floors) and the KKU
-    repository's own README (Postgres + Redis + MinIO + Gotenberg, Next.js/NestJS monorepo, 297 KKU
-    programmes).
-    MFU additions: Internationalisation dimension — plan D27, 2026-09-07, spec §5.5, concept in inter.md.
-    26 sources surveyed — docs/data-sources/job-sources-survey.md §1. LinkedIn excluded — spec §4.2.
-    DOE live and reconciled PASS 2026-09-08; Jooble ALLOW-WITH-CONDITIONS and reconciliation PASS
-    2026-09-09 (Session 67). Capability from the มคอ.2, roster retired — plan D28, spec §5.3 amendment.
-    North catchment + international-intake adjustment — spec §2.1, §5.2. Firestore-only, no Cloud SQL —
-    plan D18, root CLAUDE.md infrastructure section. Fetch-on-run — plan D17, spec §3 note; reconciled
-    source with a visible fetch date — spec §12.1. Credit breaker — Session 59. PDPA — docs/pdpa.md;
-    Council pack — Session 35.
-    "Roughly 67 development sessions": the merged session numbering in app/CLAUDE.md and the repository
-    git history, latest merged work being Session 67. Say "roughly" — it is a count of build sessions,
-    not of person-days.
+    Citations. Authorisation to hold, run and derive: repository LICENSE and the README authorisation
+    record. The KKU material stays private; no KKU source appears in this deck.
+    KKU baseline: mfu-spec.md §2 delta table (five dimensions incl. Financial and Outcomes; MHESI/KMITL
+    LinkedIn-derived API under partner credentials; Registrar Oracle; kkuscholar; HR MSSQL; Northeast
+    catchment; คณะ/Faculty; KKU's 30/8 intake floors) and the KKU repository's own README (Postgres,
+    Redis, MinIO, Gotenberg; Next.js/NestJS monorepo; 297 KKU programmes).
+    MFU additions: Internationalisation — plan D27 (2026-09-07), spec §5.5, concept in inter.md.
+    26 sources surveyed — job-sources-survey.md §1. LinkedIn excluded — spec §4.2. DOE reconciliation
+    PASS 2026-09-08; Jooble ALLOW-WITH-CONDITIONS and reconciliation PASS 2026-09-09 (Session 67).
+    Capability from the มคอ.2, roster retired — plan D28, spec §5.3 amendment. North catchment plus the
+    international-intake adjustment — spec §2.1, §5.2. Firestore only, no Cloud SQL — plan D18.
+    Fetch-on-run — plan D17, spec §3 note; reconciled source with a visible fetch date — spec §12.1.
+    Credit breaker — Session 59. PDPA — docs/pdpa.md. Council pack — Session 35.
+    "Roughly 67 sessions": the merged session numbering in app/CLAUDE.md and the repository git history,
+    the latest merged work being Session 67. Say "roughly" — it counts build sessions, not person-days.
   </aside>
 </section>
 
-<!-- 7 ────────────────────────────────────────────── -->
+<!-- 7 ───────────────── เส้นทางการพัฒนา ───────────────── -->
 <section>
-  <h3>Governance and trust</h3>
-  <h2>Eight gates a number must pass before Council sees it</h2>
+  <h3>เส้นทางการพัฒนา</h3>
+  <h2 style="font-size:1.04em">มาถึงจุดนี้ได้อย่างไร — ห้าขั้นตอน โดยข้อกำหนดคั่นกลางระหว่างต้นแบบกับระบบจริง</h2>
+  <svg viewBox="0 0 1240 400" width="100%" style="max-height:62vh" role="img"
+       aria-label="แผนภาพห้าขั้นตอนการพัฒนา ตั้งแต่การถอดรหัสระบบของ มข. การเขียนข้อกำหนด การปรับข้อกำหนดตามบริบทของ มฟล. การพัฒนาใหม่จากเมล็ดพันธุ์ ไปจนถึงการกำกับดูแล โดยมีเส้นประแสดงว่าไม่มีการคัดลอกซอร์สโค้ดโดยตรง">
+    <defs>
+      <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 z" fill="#8a1c30"/>
+      </marker>
+      <style>
+        .sbx{fill:#ffffff;stroke:#ddd7cd;stroke-width:1.5;rx:10}
+        .num{font-size:13px;fill:#8a1c30;font-weight:700;letter-spacing:.06em}
+        .st{font-size:16px;fill:#1c2024;font-weight:700}
+        .sd{font-size:12.5px;fill:#4a545e}
+        .ev{font-size:11.5px;fill:#727d88}
+        .fl{stroke:#8a1c30;stroke-width:2;fill:none;marker-end:url(#ar2)}
+      </style>
+    </defs>
+
+    <!-- stage 1 -->
+    <rect class="sbx" x="8" y="40" width="228" height="176"/>
+    <text x="24" y="66" class="num">ขั้นที่ ๑</text>
+    <text x="24" y="90" class="st">ถอดรหัสระบบของ มข.</text>
+    <text x="24" y="116" class="sd">อ่านโครงสร้างซอร์สที่รันได้ของ</text>
+    <text x="24" y="134" class="sd">Program Landscape แล้วสกัด</text>
+    <text x="24" y="152" class="sd">สูตรคำนวณคะแนนและชุดคำสั่ง AI</text>
+    <text x="24" y="170" class="sd">ออกมาไว้ใน reference/</text>
+    <text x="24" y="198" class="ev">หลักฐาน: CLAUDE.md “What this</text>
+    <text x="24" y="212" class="ev">repository is” · reference/README.md</text>
+
+    <!-- stage 2 -->
+    <rect class="sbx" x="256" y="40" width="228" height="176"/>
+    <text x="272" y="66" class="num">ขั้นที่ ๒</text>
+    <text x="272" y="90" class="st">เขียนข้อกำหนดของ มฟล.</text>
+    <text x="272" y="116" class="sd">แปลงสิ่งที่ถอดได้เป็นข้อกำหนด</text>
+    <text x="272" y="134" class="sd">ระบบฉบับ มฟล. (v0.2) พร้อม</text>
+    <text x="272" y="152" class="sd">ฉบับภาษาไทย โดย §2 ระบุความ</text>
+    <text x="272" y="170" class="sd">แตกต่างจาก มข. ทุกข้อ</text>
+    <text x="272" y="198" class="ev">หลักฐาน: mfu-spec.md §2</text>
+    <text x="272" y="212" class="ev">· mfu-spec-thai.md</text>
+
+    <!-- stage 3 -->
+    <rect class="sbx" x="504" y="40" width="228" height="176"/>
+    <text x="520" y="66" class="num">ขั้นที่ ๓</text>
+    <text x="520" y="90" class="st">ปรับข้อกำหนดตามความจริง</text>
+    <text x="520" y="116" class="sd">คำวินิจฉัย D1–D35 และภาคผนวก</text>
+    <text x="520" y="134" class="sd">ที่บันทึกไว้: ใช้ Firestore อย่างเดียว ·</text>
+    <text x="520" y="152" class="sd">ดึงข้อมูลเมื่อรัน · TCAS ถูกปฏิเสธ</text>
+    <text x="520" y="170" class="sd">จึงใช้ไฟล์จากสำนักทะเบียนแทน</text>
+    <text x="520" y="198" class="ev">หลักฐาน: docs/spec-reconciliation.md</text>
+    <text x="520" y="212" class="ev">· plan.md ตาราง D1–D35</text>
+
+    <!-- stage 4 -->
+    <rect class="sbx" x="752" y="40" width="228" height="176" style="stroke:#8a1c30;stroke-width:2"/>
+    <text x="768" y="66" class="num">ขั้นที่ ๔</text>
+    <text x="768" y="90" class="st">พัฒนาใหม่จากเมล็ดพันธุ์</text>
+    <text x="768" y="116" class="sd">สร้าง app/ ขึ้นใหม่ผ่านรอบพัฒนา</text>
+    <text x="768" y="134" class="sd">ที่เรียงลำดับราว ๖๗ รอบ พร้อมชุด</text>
+    <text x="768" y="152" class="sd">ทดสอบ ชุดทดสอบบนอีมูเลเตอร์</text>
+    <text x="768" y="170" class="sd">และการติดตั้งบนระบบทดสอบ</text>
+    <text x="768" y="198" class="ev">หลักฐาน: app/CLAUDE.md “Current</text>
+    <text x="768" y="212" class="ev">status” · plan.md §10, §12</text>
+
+    <!-- stage 5 -->
+    <rect class="sbx" x="1000" y="40" width="228" height="176"/>
+    <text x="1016" y="66" class="num">ขั้นที่ ๕</text>
+    <text x="1016" y="90" class="st">กำกับดูแล</text>
+    <text x="1016" y="116" class="sd">บันทึกผลตรวจทางกฎหมายรายแหล่ง</text>
+    <text x="1016" y="134" class="sd">การลงนามกำกับ การลงนามสอบทาน</text>
+    <text x="1016" y="152" class="sd">ความถูกต้องของข้อมูล และชุดเอกสาร</text>
+    <text x="1016" y="170" class="sd">คุ้มครองข้อมูลส่วนบุคคล</text>
+    <text x="1016" y="198" class="ev">หลักฐาน: docs/data-sources/*.md</text>
+    <text x="1016" y="212" class="ev">· docs/pdpa.md · spec §12.1</text>
+
+    <path class="fl" d="M238 128 L252 128"/>
+    <path class="fl" d="M486 128 L500 128"/>
+    <path class="fl" d="M734 128 L748 128"/>
+    <path class="fl" d="M982 128 L996 128"/>
+
+    <!-- the non-copy path -->
+    <path d="M100 218 C100 320 700 340 830 320" fill="none" stroke="#b9b1a6" stroke-width="2" stroke-dasharray="7 6"/>
+    <g transform="translate(455,332)">
+      <circle cx="0" cy="-8" r="15" fill="#fbf5f6" stroke="#96302b" stroke-width="2"/>
+      <path d="M-6 -14 L6 -2 M6 -14 L-6 -2" stroke="#96302b" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <text x="482" y="330" style="font-size:14px;fill:#96302b;font-weight:700">ไม่มีการคัดลอกหรือแยกสาขาซอร์สโค้ดของ มข. มาใช้โดยตรง</text>
+    <text x="482" y="352" style="font-size:12.5px;fill:#727d88">เส้นทางเดียวจากขั้นที่ ๑ ไปขั้นที่ ๔ คือผ่านข้อกำหนดในขั้นที่ ๒ และ ๓ — ซอร์สของ มข. ถูกอ่านและถอดความ ไม่ได้ถูกนำมาใช้ซ้ำ</text>
+    <text x="8" y="386" class="ev">แต่ละ “รอบพัฒนา” คือหนึ่งชุดคำสั่งที่เรียงลำดับไว้ล่วงหน้า ใช้เวลาราวครึ่งวันถึงหนึ่งวัน จบด้วยการทดสอบและการติดตั้ง</text>
+  </svg>
+  <aside class="notes">
+    Citations, stage by stage.
+    (1) Reverse-engineering: root CLAUDE.md, "What this repository is" — the runnable KKU tree was
+    removed on 2026-09-03 and lives in git history at commit 591884a; what remains is the extracted
+    scoring source and versioned AI prompts under reference/ (see reference/README.md, which also notes
+    that those .ts files will not typecheck standalone because they still import @kku/* packages).
+    (2) Specification: mfu-spec.md (v0.2) with the Thai edition mfu-spec-thai.md kept in sync; §2 is the
+    delta table naming every MFU difference; Appendix A records the provenance of the specification.
+    (3) Revision against reality: docs/spec-reconciliation.md (prepared by Session 37) and plan.md's
+    decision table D1–D35 — Firestore only (D18), fetch-on-run (D17), TCAS ToS DENY so S1 ships as a
+    registrar file import (Sessions 15/16), the job-board legal survey (job-sources-survey.md),
+    the Internationalisation dimension (D27), and the North catchment (spec §2.1).
+    (4) Redevelopment: app/CLAUDE.md "Current status" and plan.md §10 and §12 — app/ was grown session by
+    session, latest merged work Session 67; plan.md describes a session as one sequenced prompt, typically
+    half a day to a day. This is not a fork of the KKU tree: root CLAUDE.md instructs that the KKU tree is
+    never restored onto main.
+    (5) Governance: per-source findings and countersignatures in docs/data-sources/*.md, the reconciliation
+    blocks at the end of each of those files, docs/pdpa.md, and the Council gates in mfu-spec.md §12.1.
+    If asked "so what did you take from KKU?": the institution-agnostic scoring formulas and prompt
+    structure, read and re-specified — under a licence that authorises MFU to hold, run and derive, and
+    which keeps both repositories private.
+  </aside>
+</section>
+
+<!-- 8 ───────────────── ธรรมาภิบาล ───────────────── -->
+<section>
+  <h3>ธรรมาภิบาลและความน่าเชื่อถือ</h3>
+  <h2>ด่านแปดข้อที่ตัวเลขต้องผ่าน ก่อนจะไปปรากฏต่อสภามหาวิทยาลัย</h2>
   <div class="gates" style="margin-top:.7em">
-    <div class="gate"><b>Provenance drawer</b>on every chart: sources, freshness, method, version, caveats</div>
-    <div class="gate"><b>Confidence + sources</b>on every AI output, clickable through to the evidence</div>
-    <div class="gate"><b>Freshness timestamp</b>on every single data point</div>
-    <div class="gate"><b>Audit log</b>on every mutation of the record</div>
-    <div class="gate"><b>Inference log</b>on every AI call — cost, sources, confidence</div>
-    <div class="gate"><b>Methodology version</b>stamped on every metric, documents versioned in git</div>
-    <div class="gate"><b>Reconciled source</b>with a visible fetch date; nightly collectors need 30 days of green history</div>
-    <div class="gate"><b>DPO sign-off</b>on the PDPA posture, including the job-board projection</div>
+    <div class="gate"><b>ลิ้นชักที่มาของข้อมูล</b>ทุกแผนภูมิ — แหล่งที่มา ความสด วิธีคำนวณ เวอร์ชัน และข้อจำกัด</div>
+    <div class="gate"><b>ความเชื่อมั่นและแหล่งอ้างอิง</b>กำกับผลลัพธ์ AI ทุกชิ้น คลิกดูหลักฐานต้นทางได้</div>
+    <div class="gate"><b>ตราเวลาความสด</b>กำกับข้อมูลทุกจุด</div>
+    <div class="gate"><b>บันทึกการตรวจสอบ</b>ทุกครั้งที่มีการแก้ไขข้อมูล</div>
+    <div class="gate"><b>บันทึกการอนุมาน</b>ทุกการเรียกใช้ AI — ต้นทุน แหล่งอ้างอิง ความเชื่อมั่น</div>
+    <div class="gate"><b>เวอร์ชันระเบียบวิธี</b>ประทับบนทุกตัวชี้วัด และเอกสารกำกับเวอร์ชันใน git</div>
+    <div class="gate"><b>แหล่งข้อมูลที่สอบทานแล้ว</b>พร้อมวันที่ดึงที่มองเห็นได้ · ตัวเก็บรายคืนต้องมีประวัติปกติ ๓๐ วัน</div>
+    <div class="gate"><b>การลงนามของเจ้าหน้าที่คุ้มครองข้อมูล</b>ต่อแนวปฏิบัติ PDPA รวมถึงขอบเขตข้อมูลประกาศงาน</div>
   </div>
-  <p class="med" style="margin-top:1em"><em>And the discipline of saying what it cannot answer.</em>
-  Stated on every Council-facing surface:</p>
+  <p class="med" style="margin-top:1em"><em>และวินัยในการบอกว่าระบบตอบอะไรไม่ได้</em>
+  ข้อความต่อไปนี้ปรากฏบนทุกหน้าที่เสนอต่อสภามหาวิทยาลัย</p>
   <div class="cols c2" style="margin-top:.4em">
-    <div class="cannot">Is this programme <strong>financially sustainable</strong>? · Do our graduates
-      <strong>get jobs</strong>? · Are students <strong>satisfied</strong>? · Will we <strong>lose the
-      teaching team</strong>? · Are students <strong>graduating on time</strong>? — each needs an
-      internal integration MFU has not yet made.</div>
-    <div class="cannot" style="border-left-color:var(--warn)">Advertised salary is a <strong>demand-side
-      signal</strong> — what employers offer for a role. It must never be read as what MFU graduates earn.
-      Internationalisation likewise cannot see student mobility counts or staff nationality.</div>
+    <div class="cannot">หลักสูตรนี้ <strong>คุ้มทุนหรือไม่</strong> · บัณฑิต <strong>ได้งานทำหรือไม่</strong> ·
+      นักศึกษา <strong>พึงพอใจหรือไม่</strong> · เราจะ <strong>สูญเสียทีมผู้สอน</strong> หรือไม่ ·
+      นักศึกษา <strong>จบตรงเวลาหรือไม่</strong> — แต่ละข้อต้องอาศัยการเชื่อมระบบภายในที่ยังไม่ได้ทำ</div>
+    <div class="cannot" style="border-left-color:var(--warn)">เงินเดือนที่ประกาศรับสมัครเป็น
+      <strong>สัญญาณฝั่งอุปสงค์</strong> คือสิ่งที่นายจ้างเสนอสำหรับตำแหน่งนั้น
+      <strong>ห้ามตีความว่าเป็นเงินเดือนที่บัณฑิต มฟล. ได้รับ</strong> ·
+      เช่นเดียวกัน มิติความเป็นนานาชาติไม่สามารถบอกจำนวนนักศึกษาแลกเปลี่ยนหรือสัญชาติของอาจารย์ได้</div>
   </div>
   <aside class="notes">
-    Citations. The eight gates are mfu-spec.md §12.1 verbatim (provenance drawer; confidence and
-    clickable sources; freshness timestamp; audit log on every mutation and inference log on every AI
-    call; methodology version stamped, docs versioned in git; reconciled source data with a visible fetch
-    date — the 2026-09-04 decision that replaced the blanket 30-day soak, with the 30-day green history
-    kept for collected job-board sources; MFU DPO sign-off on the PDPA posture including the job-board
-    projection).
-    The limitations table and the salary warning: mfu-spec.md §11 — the salary misreading is described
-    there as "the single most damaging misreading this system could produce". Internationalisation's
-    named exclusions (mobility counts, staff nationality, rankings' international-outlook sub-score):
-    §11 as amended by D27.
-    AI governance detail if asked: §8 — every prompt is a versioned code file with a Zod output schema,
-    a behaviour change is a version bump, a published version is never edited in place, and outputs below
+    Citations. The eight gates are mfu-spec.md §12.1 (provenance drawer; confidence and clickable sources;
+    freshness timestamp; audit log on every mutation and inference log on every AI call; methodology
+    version stamped, docs versioned in git; reconciled source data with a visible fetch date — the
+    2026-09-04 decision that replaced the blanket 30-day soak, keeping 30 days of green history for
+    collected job-board sources; MFU DPO sign-off on the PDPA posture including the job-board projection).
+    The limitations table and the salary warning: mfu-spec.md §11, which calls the salary misreading
+    "the single most damaging misreading this system could produce". Internationalisation's named
+    exclusions (mobility counts, staff nationality, rankings' international-outlook sub-score): §11 as
+    amended by D27.
+    AI governance if asked: §8 — every prompt is a versioned code file with a Zod output schema, a
+    behaviour change is a version bump, a published version is never edited in place, and outputs below
     0.85 confidence go to an analyst review queue rather than straight to a score.
   </aside>
 </section>
 
-<!-- 8 ────────────────────────────────────────────── -->
+<!-- 9 ───────────────── สถานะและก้าวต่อไป ───────────────── -->
 <section>
-  <h3>Status</h3>
-  <h2>Live on staging, running unattended — waiting on data and decisions, not on code</h2>
+  <h3>สถานะปัจจุบัน</h3>
+  <h2>ระบบทดสอบใช้งานได้จริงและทำงานอัตโนมัติอยู่ — สิ่งที่รออยู่คือข้อมูลและการตัดสินใจ ไม่ใช่การเขียนโปรแกรม</h2>
   <div class="statrow" style="margin:.8em 0 1em">
-    <div class="stat"><b>15 / 84</b><span>Schools / programmes in the register</span></div>
-    <div class="stat"><b>5 156</b><span>DOE postings collected and reconciled</span></div>
-    <div class="stat"><b>11 776</b><span>Jooble rows, all 77 provinces, reconciled</span></div>
-    <div class="stat"><b>26</b><span>job sources surveyed for legality</span></div>
-    <div class="stat"><b>3</b><span>pilot programmes fully scored</span></div>
+    <div class="stat"><b>๑๕ / ๘๔</b><span>สำนักวิชา / หลักสูตร ในทะเบียนระบบ</span></div>
+    <div class="stat"><b>5 156</b><span>ประกาศงานจากไทยมีงานทำ ที่เก็บและสอบทานแล้ว</span></div>
+    <div class="stat"><b>11 776</b><span>แถวข้อมูลจาก Jooble ครบทั้ง ๗๗ จังหวัด สอบทานแล้ว</span></div>
+    <div class="stat"><b>๒๖</b><span>แหล่งประกาศงานที่สำรวจด้านกฎหมายแล้ว</span></div>
+    <div class="stat"><b>๓</b><span>หลักสูตรนำร่องที่ให้คะแนนครบ</span></div>
   </div>
   <div class="cols c3">
     <div>
-      <h3>Built and running</h3>
-      <ul class="small" style="font-size:.6em">
-        <li>Upload → the AI extraction stages → dashboard, PDF export, Council pack PDF</li>
-        <li>All five dimensions, lifecycle verdict and risk likelihood scoring</li>
-        <li>Nightly job-board collection, skill extraction and rollups, running unattended</li>
-        <li>Review queues, audit and inference logs, PDPA retention sweep</li>
+      <h3>สร้างเสร็จและทำงานอยู่</h3>
+      <ul class="small" style="font-size:.58em">
+        <li>อัปโหลด → ขั้นตอนสกัดด้วย AI → แดชบอร์ด ไฟล์ PDF และเอกสารเสนอสภา</li>
+        <li>ให้คะแนนครบทั้งห้ามิติ พร้อมคำวินิจฉัยวงจรชีวิตและโอกาสเกิดความเสี่ยง</li>
+        <li>เก็บประกาศงาน สกัดทักษะ และสรุปยอดรวมรายคืน โดยไม่ต้องมีคนดูแล</li>
+        <li>คิวตรวจทานโดยผู้เชี่ยวชาญ บันทึกตรวจสอบและบันทึกการอนุมาน และการลบข้อมูลตามกำหนดเก็บรักษา</li>
       </ul>
     </div>
     <div>
-      <h3>Needs a decision</h3>
-      <ul class="small" style="font-size:.6em">
-        <li><strong>DPO acceptance</strong> of the PDPA posture and the job-board projection</li>
-        <li><strong>MFU's declared strategic sectors</strong> — a national S-curve proxy stands in today</li>
-        <li><strong>Intake floors per level</strong> — MFU's own, not KKU's</li>
-        <li><strong>Academic Council ratification</strong> of the QA ladder and the Internationalisation anchors</li>
+      <h3>รอการตัดสินใจ</h3>
+      <ul class="small" style="font-size:.58em">
+        <li><strong>การรับรองของเจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล</strong> ต่อแนวปฏิบัติ PDPA และขอบเขตข้อมูลประกาศงาน</li>
+        <li><strong>อุตสาหกรรมยุทธศาสตร์ของ มฟล.</strong> — ปัจจุบันใช้อุตสาหกรรมเป้าหมายระดับชาติแทนไปก่อน</li>
+        <li><strong>เกณฑ์จำนวนรับขั้นต่ำรายระดับการศึกษา</strong> ของ มฟล. เอง</li>
+        <li><strong>การรับรองของสภาวิชาการ</strong> ต่อบันไดระดับประกันคุณภาพ และหมุดอ้างอิงมิติความเป็นนานาชาติ</li>
       </ul>
     </div>
     <div>
-      <h3>Needs data</h3>
-      <ul class="small" style="font-size:.6em">
-        <li>The remaining <span class="th">มคอ.2</span> uploaded — 3 of 84 analysed</li>
-        <li>Per-round admissions confirmation figures, if MFU publishes them</li>
-        <li>A second intake year, so international shares are more than one year</li>
-        <li>Partner feeds, if MFU wants JobThai or JobsDB coverage — request drafts are written</li>
+      <h3>รอข้อมูล</h3>
+      <ul class="small" style="font-size:.58em">
+        <li>อัปโหลด มคอ.2 ที่เหลือ — วิเคราะห์แล้ว ๓ จาก ๘๔ หลักสูตร</li>
+        <li>ข้อมูลยืนยันสิทธิ์รายรอบ หากมหาวิทยาลัยเผยแพร่</li>
+        <li>ข้อมูลปีการศึกษาที่สอง เพื่อให้สัดส่วนนักศึกษาต่างชาติไม่ได้มาจากปีเดียว</li>
+        <li>ฟีดจากพันธมิตร หากต้องการความครอบคลุมของ JobThai หรือ JobsDB — ร่างหนังสือขอความร่วมมือเตรียมไว้แล้ว</li>
       </ul>
     </div>
   </div>
-  <p class="small" style="margin-top:.9em">Then: production cut-over — custom domain
-  <span class="pill tbc">to be confirmed</span>, sign-in restricted to <strong>mfu.ac.th</strong>, a tagged release.</p>
+  <p class="small" style="margin-top:.9em">จากนั้นคือการย้ายขึ้นระบบจริง — ชื่อโดเมน
+  <span class="pill tbc">ยังไม่ยืนยัน</span> · จำกัดการลงชื่อเข้าใช้เฉพาะ <strong class="en">mfu.ac.th</strong> ·
+  และออกเวอร์ชันที่ติดป้ายกำกับ</p>
   <aside class="notes">
-    Citations. 15 schools / 84 programmes: app/CLAUDE.md Session 38. 5 156 DOE postings, reconciliation
-    signed PASS 2026-09-08: docs/data-sources/doe-smart-job.md. 11 776 Jooble rows in 239 requests across
-    all 77 provinces, reconciliation PASS by the lead on ten rows, 2026-09-09: docs/data-sources/jooble.md.
-    26 sources: job-sources-survey.md §1. Three pilot programmes: TODO.md.
-    Open items: TODO.md "Needs the lead" — DPO items (docs/pdpa.md §7 items 4, 5, 7, 8), BOI source URL
-    for the 12 targeted industries (recorded in the repository as "to be confirmed"), M0 intake floors per
-    level and MFU's strategic sectors, Academic Council ratification of the three anchor sets ratified for
-    the pilot under D35, the 2567/2568 intake plan, the remaining มคอ.2 uploads, and prod cut-over
-    (custom domain is open question 12, region open item 13). AUTH_ALLOWED_DOMAINS = mfu.ac.th in
-    production: TODO.md prod cut-over entry. Partner-feed drafts for JobThai and JobsDB/SEEK:
-    job-sources-survey.md §5 (drafts A and B, not sent — lead's decision 2026-09-06).
+    Citations. 15 schools / 84 programmes: app/CLAUDE.md Session 38. 5 156 DOE postings with
+    reconciliation signed PASS 2026-09-08: docs/data-sources/doe-smart-job.md. 11 776 Jooble rows in
+    239 requests across all 77 provinces, reconciliation PASS by the lead on ten rows, 2026-09-09:
+    docs/data-sources/jooble.md. 26 sources: job-sources-survey.md §1. Three pilot programmes: TODO.md.
+    Open items: TODO.md "Needs the lead" — DPO items (docs/pdpa.md §7 items 4, 5, 7, 8); the BOI source
+    URL for the 12 targeted industries, recorded in the repository as "to be confirmed"; M0 intake floors
+    per level and MFU's own strategic sectors (the national S-curve proxy stands in under plan D34);
+    Academic Council ratification of the three anchor sets ratified for the pilot under D35; the
+    2567/2568 intake plan; the remaining มคอ.2 uploads; and prod cut-over (custom domain is open question
+    12, region open item 13). AUTH_ALLOWED_DOMAINS = mfu.ac.th in production: TODO.md prod cut-over entry.
+    Partner-feed drafts for JobThai and JobsDB/SEEK: job-sources-survey.md §5, drafts A and B — not sent,
+    on the lead's decision of 2026-09-06.
     Do not quote a cut-over date; none is set.
   </aside>
 </section>
 
-<!-- 9 ────────────────────────────────────────────── -->
+<!-- 10 ───────────────── ปิดท้าย ───────────────── -->
 <section data-auto-animate>
-  <h3>In one sentence</h3>
-  <h1 style="font-size:1.45em; max-width:20em; line-height:1.2">Every curriculum decision MFU makes
-  should rest on evidence someone can check.</h1>
+  <h3>สรุปในหนึ่งประโยค</h3>
+  <h1 style="font-size:1.3em; max-width:19em; line-height:1.35">ทุกการตัดสินใจเรื่องหลักสูตรของมหาวิทยาลัย
+  ควรตั้งอยู่บนหลักฐานที่ตรวจสอบย้อนกลับได้</h1>
   <div class="rule"></div>
-  <p class="lede" style="max-width:26em">This system makes that evidence routine — assembled from MFU's
-  own documents and public data, with the source, the fetch date and the method attached to every
-  number, and an honest blank wherever the data does not yet exist.</p>
-  <p class="small" style="margin-top:1.6em">MFU Curriculum Landscape ·
-  <span class="th">มหาวิทยาลัยแม่ฟ้าหลวง</span> · staging: mfu-program-landscape.web.app</p>
+  <p class="lede" style="max-width:27em">ระบบนี้ทำให้หลักฐานดังกล่าวเกิดขึ้นเป็นกิจวัตร — ประกอบขึ้นจากเอกสาร
+  ของมหาวิทยาลัยเองและข้อมูลสาธารณะ โดยแนบแหล่งที่มา วันที่ดึงข้อมูล และวิธีคำนวณไว้กับทุกตัวเลข
+  และเว้นว่างอย่างตรงไปตรงมาในจุดที่ยังไม่มีข้อมูล</p>
+  <p class="small" style="margin-top:1.5em">ระบบภูมิทัศน์หลักสูตร มหาวิทยาลัยแม่ฟ้าหลวง ·
+  ระบบทดสอบ: <span class="en">mfu-program-landscape.web.app</span></p>
   <aside class="notes">
-    Close on the ask, not the technology: the system is built; what it needs from the executive is the
-    DPO acceptance, the strategic-sector declaration, the intake floors, and the remaining มคอ.2.
-    Every figure in this deck is traceable to a file in the mfu-program-landscape repository; the
+    Close on the ask, not the technology: the system is built; what it needs from the executive is DPO
+    acceptance, the strategic-sector declaration, the intake floors, and the remaining มคอ.2 uploads.
+    Every figure in this deck is traceable to a file in the mfu-program-landscape repository; these
     speaker notes name the file and section for each.
   </aside>
 </section>
