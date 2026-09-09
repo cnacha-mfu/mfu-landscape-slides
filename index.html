@@ -453,7 +453,7 @@
 <section>
   <h3>เส้นทางการพัฒนา</h3>
   <h2 style="font-size:1.04em">มาถึงจุดนี้ได้อย่างไร — ห้าขั้นตอน โดยข้อกำหนดคั่นกลางระหว่างต้นแบบกับระบบจริง</h2>
-  <svg viewBox="0 0 1240 400" width="100%" style="max-height:62vh" role="img"
+  <svg viewBox="0 0 1240 424" width="100%" style="max-height:64vh" role="img"
        aria-label="แผนภาพห้าขั้นตอนการพัฒนา ตั้งแต่การถอดรหัสระบบของ มข. การเขียนข้อกำหนด การปรับข้อกำหนดตามบริบทของ มฟล. การพัฒนาใหม่จากเมล็ดพันธุ์ ไปจนถึงการกำกับดูแล โดยมีเส้นประแสดงว่าไม่มีการคัดลอกซอร์สโค้ดโดยตรง">
     <defs>
       <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -529,15 +529,16 @@
     <path class="fl" d="M734 128 L748 128"/>
     <path class="fl" d="M982 128 L996 128"/>
 
-    <!-- the non-copy path -->
-    <path d="M100 218 C100 320 700 340 830 320" fill="none" stroke="#b9b1a6" stroke-width="2" stroke-dasharray="7 6"/>
-    <g transform="translate(455,332)">
-      <circle cx="0" cy="-8" r="15" fill="#fbf5f6" stroke="#96302b" stroke-width="2"/>
-      <path d="M-6 -14 L6 -2 M6 -14 L-6 -2" stroke="#96302b" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- the non-copy path: stage 1 straight to stage 4, crossed out -->
+    <path d="M122 218 C122 300 300 316 620 316 C880 316 866 292 866 226"
+          fill="none" stroke="#b9b1a6" stroke-width="2" stroke-dasharray="7 6"/>
+    <g transform="translate(620,316)">
+      <circle cx="0" cy="0" r="17" fill="#fbf5f6" stroke="#96302b" stroke-width="2.4"/>
+      <path d="M-7 -7 L7 7 M7 -7 L-7 7" stroke="#96302b" stroke-width="2.8" stroke-linecap="round"/>
     </g>
-    <text x="482" y="330" style="font-size:14px;fill:#96302b;font-weight:700">ไม่มีการคัดลอกหรือแยกสาขาซอร์สโค้ดของ มข. มาใช้โดยตรง</text>
-    <text x="482" y="352" style="font-size:12.5px;fill:#727d88">เส้นทางเดียวจากขั้นที่ ๑ ไปขั้นที่ ๔ คือผ่านข้อกำหนดในขั้นที่ ๒ และ ๓ — ซอร์สของ มข. ถูกอ่านและถอดความ ไม่ได้ถูกนำมาใช้ซ้ำ</text>
-    <text x="8" y="386" class="ev">แต่ละ “รอบพัฒนา” คือหนึ่งชุดคำสั่งที่เรียงลำดับไว้ล่วงหน้า ใช้เวลาราวครึ่งวันถึงหนึ่งวัน จบด้วยการทดสอบและการติดตั้ง</text>
+    <text x="620" y="358" text-anchor="middle" style="font-size:14.5px;fill:#96302b;font-weight:700">ไม่มีการคัดลอกหรือแยกสาขาซอร์สโค้ดของ มข. มาใช้โดยตรง</text>
+    <text x="620" y="380" text-anchor="middle" style="font-size:12.5px;fill:#727d88">เส้นทางเดียวจากขั้นที่ ๑ ไปขั้นที่ ๔ คือผ่านข้อกำหนดในขั้นที่ ๒ และ ๓ — ซอร์สของ มข. ถูกอ่านและถอดความ ไม่ได้ถูกนำมาใช้ซ้ำ</text>
+    <text x="8" y="412" class="ev">แต่ละ “รอบพัฒนา” คือหนึ่งชุดคำสั่งที่เรียงลำดับไว้ล่วงหน้า ใช้เวลาราวครึ่งวันถึงหนึ่งวัน จบด้วยการทดสอบและการติดตั้ง</text>
   </svg>
   <aside class="notes">
     Citations, stage by stage.
